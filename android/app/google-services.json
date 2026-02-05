@@ -1,0 +1,163 @@
+{
+  "project_info": {
+    "project_number": "522961363699",
+    "firebase_url": "https://jomlahcom.firebaseio.com",
+    "project_id": "jomlahcom",
+    "storage_bucket": "jomlahcom.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522961363699:android:647524f830e1499a468d86",
+        "android_client_info": {
+          "package_name": "com.activeitzone.active_ecommerce_seller_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522961363699-dbj4gogsji4l3utbv6d8b2ch43rllbfq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwpEfFQszIXSyoAzYIImAzbQBKbBC-tnQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522961363699-dbj4gogsji4l3utbv6d8b2ch43rllbfq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "522961363699-74aira7t81qopt9dp85iqperb4u966g0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.activeEcommerceSellerApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522961363699:android:f8f7c8b9046ab2e0",
+        "android_client_info": {
+          "package_name": "com.jomlah.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522961363699-c2lljsl4i8ucmjronpkg74pu1rakt4j7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jomlah.android",
+            "certificate_hash": "1029766cff169af6a5ce29fc59a750deb73dae1c"
+          }
+        },
+        {
+          "client_id": "522961363699-dbj4gogsji4l3utbv6d8b2ch43rllbfq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwpEfFQszIXSyoAzYIImAzbQBKbBC-tnQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522961363699-dbj4gogsji4l3utbv6d8b2ch43rllbfq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "522961363699-74aira7t81qopt9dp85iqperb4u966g0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.activeEcommerceSellerApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522961363699:android:1498a486ab9e0128",
+        "android_client_info": {
+          "package_name": "com.jomlah.dev.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522961363699-dbj4gogsji4l3utbv6d8b2ch43rllbfq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwpEfFQszIXSyoAzYIImAzbQBKbBC-tnQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522961363699-dbj4gogsji4l3utbv6d8b2ch43rllbfq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "522961363699-74aira7t81qopt9dp85iqperb4u966g0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.activeEcommerceSellerApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522961363699:android:9b16b9899f0963b8468d86",
+        "android_client_info": {
+          "package_name": "com.suq.jomlah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522961363699-dbj4gogsji4l3utbv6d8b2ch43rllbfq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwpEfFQszIXSyoAzYIImAzbQBKbBC-tnQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522961363699-dbj4gogsji4l3utbv6d8b2ch43rllbfq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "522961363699-74aira7t81qopt9dp85iqperb4u966g0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.activeEcommerceSellerApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

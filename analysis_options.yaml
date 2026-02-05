@@ -1,0 +1,16 @@
+include: package:flutter_lints/flutter.yaml
+formatter:
+  page_width: 300
+  trailing_commas: preserve
+linter:
+  rules:
+    - always_use_package_imports
+analyzer:
+  plugins:
+    - custom_lint
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+  # errors:
+  #   invalid_annotation_target: ignore
+  #   non_constant_identifier_names: ignore

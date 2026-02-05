@@ -1,0 +1,23 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "jomlahcom",
+          "appId": "1:522961363699:android:9b16b9899f0963b8468d86",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "jomlahcom",
+          "configurations": {
+            "android": "1:522961363699:android:9b16b9899f0963b8468d86",
+            "ios": "1:522961363699:ios:5e6ab71fd7df0289468d86",
+            "macos": "1:522961363699:ios:100d63cb5e07f095468d86"
+          }
+        }
+      }
+    }
+  }
+}
