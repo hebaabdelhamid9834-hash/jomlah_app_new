@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>522961363699-hc7hvbpjv38n7161fr4hl36pue6pau9u.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.522961363699-hc7hvbpjv38n7161fr4hl36pue6pau9u</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>522961363699-c2lljsl4i8ucmjronpkg74pu1rakt4j7.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCaIkDgdR8huAm3NSYtoL-jCDzb58Ppo00</string>
+	<key>GCM_SENDER_ID</key>
+	<string>522961363699</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.iOS.Jomlah</string>
+	<key>PROJECT_ID</key>
+	<string>jomlahcom</string>
+	<key>STORAGE_BUCKET</key>
+	<string>jomlahcom.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:522961363699:ios:cf7ddcbe21042ef0468d86</string>
+	<key>DATABASE_URL</key>
+	<string>https://jomlahcom.firebaseio.com</string>
+</dict>
+</plist>
