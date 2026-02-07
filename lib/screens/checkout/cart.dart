@@ -36,7 +36,7 @@ class _CartState extends State<Cart> {
       context: context,
       builder: (context) => AlertDialog(
         title:  Text(AppLocalizations.of(context).warning_ucf,style: TextStyle(color:Colors.amber),),
-        content: Text(AppLocalizations.of(context).trader,style: TextStyle(color: Colors.amber),
+        content: Text(AppLocalizations.of(context).trader,
         ),
         actions: [
           TextButton(

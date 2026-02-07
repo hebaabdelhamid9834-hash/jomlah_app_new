@@ -508,7 +508,7 @@ class CartProvider extends ChangeNotifier {
     fetchData(context);
   }
   int get uniqueTradersCount {
-    final Set<int> traders = {1,2};
+    final Set<int> traders = {};
 
     if (_shopList.isNotEmpty) {
       for (var shop in _shopList) {
