@@ -367,6 +367,7 @@ class _ProductDetailsState extends State<ProductDetails> with TickerProviderStat
   }
 
   void onPressAddToCart(context, snackbar) {
+    print("add to cart tttt ${snackbar.toString()}");
     addToCart(mode: "add_to_cart", context: context, snackbar: snackbar);
   }
 
@@ -401,6 +402,7 @@ class _ProductDetailsState extends State<ProductDetails> with TickerProviderStat
     temp_user_id.save();
 
     if (cartAddResponse.result == false) {
+      print("cart add response false: ${cartAddResponse.message}");
       ToastComponent.showDialog(cartAddResponse.message);
       return;
     } else {
@@ -410,6 +412,8 @@ class _ProductDetailsState extends State<ProductDetails> with TickerProviderStat
         if (snackbar != null) {
           ScaffoldMessenger.of(context).showSnackBar(snackbar);
         }
+        print("tttttt");
+
         reset();
         fetchAll();
       } else if (mode == 'buy_now') {

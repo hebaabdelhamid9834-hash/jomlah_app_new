@@ -680,6 +680,7 @@
   "sign_in_with_apple": "تسجيل الدخول عبر Apple",
   "app_name_splash_ucf":"Jomlah.com",
   "choose_language_ucf":"اختر اللغة",
-  "ryial_ucf":"ريال "
+  "ryial_ucf":"ريال ",
+"trader": "لديك منتجات من أكثر من تاجر.\nسيتم زيادة رسوم الشحن لأن الطلب سيتم شحنه من أكثر من مصدر."
 
 }

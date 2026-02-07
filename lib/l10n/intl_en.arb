@@ -768,7 +768,8 @@
   "sign_in_with_apple": "Sign in with Apple",
   "app_name_splash_ucf": "Jomlah.com",
   "choose_language_ucf": "Choose Language",
-  "ryial_ucf":"Ryial"
+  "ryial_ucf":"Ryial",
+"trader": "You have products from more than one trader.\nThe delivery fees will increase because the order will be shipped from multiple sources."
 
 
 

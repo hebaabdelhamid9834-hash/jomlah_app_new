@@ -6658,6 +6658,16 @@ class AppLocalizations {
   String get ryial_ucf {
     return Intl.message('Ryial', name: 'ryial_ucf', desc: '', args: []);
   }
+
+  /// `You have products from more than one trader.\nThe delivery fees will increase because the order will be shipped from multiple sources.`
+  String get trader {
+    return Intl.message(
+      'You have products from more than one trader.\nThe delivery fees will increase because the order will be shipped from multiple sources.',
+      name: 'trader',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

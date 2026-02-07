@@ -1426,6 +1426,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "total_orders_ucf": MessageLookupByLibrary.simpleMessage("Total Orders"),
     "total_price_ucf": MessageLookupByLibrary.simpleMessage("Total Price  :"),
     "total_sales_ucf": MessageLookupByLibrary.simpleMessage("Total Sales"),
+    "trader": MessageLookupByLibrary.simpleMessage(
+      "You have products from more than one trader.\nThe delivery fees will increase because the order will be shipped from multiple sources.",
+    ),
     "transaction_id_ucf": MessageLookupByLibrary.simpleMessage(
       "Transaction Id",
     ),

@@ -30,6 +30,29 @@ class Cart extends StatefulWidget {
 
 class _CartState extends State<Cart> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  Future<bool> _showMultiTraderWarning(int tradersCount) async {
+    print("muli vendor");
+    return await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title:  Text(AppLocalizations.of(context).warning_ucf,style: TextStyle(color:Colors.amber),),
+        content: Text(AppLocalizations.of(context).trader,style: TextStyle(color: Colors.amber),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child:  Text(AppLocalizations.of(context).cancel_ucf),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(context, true),
+
+    child:  Text(AppLocalizations.of(context).continue_ucf),
+          ),
+        ],
+      ),
+    ) ??
+        false;
+  }
 
   @override
   void initState() {
@@ -161,7 +184,18 @@ class _CartState extends State<Cart> {
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                      onPressed: canProceed ? () => cartProvider.onPressProceedToShipping(context) : null,
+                      onPressed:  canProceed
+                          ? () async {
+                        final tradersCount = cartProvider.uniqueTradersCount;
+
+                        if (tradersCount > 1) {
+                          final agreed = await _showMultiTraderWarning(tradersCount);
+                          if (!agreed) return;
+                        }
+
+                        cartProvider.onPressProceedToShipping(context);
+                      }
+                          : null,
                     ),
                   ),
                 ),

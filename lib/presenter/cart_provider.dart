@@ -507,4 +507,28 @@ class CartProvider extends ChangeNotifier {
     reset();
     fetchData(context);
   }
+  int get uniqueTradersCount {
+    final Set<int> traders = {1,2};
+
+    if (_shopList.isNotEmpty) {
+      for (var shop in _shopList) {
+        // First level (Datum.ownerId)
+        if (shop.ownerId != null) {
+          traders.add(shop.ownerId);
+        }
+
+        // Safety: item level (CartItem.ownerId)
+        if (shop.cartItems != null && shop.cartItems.isNotEmpty) {
+          for (var item in shop.cartItems) {
+            if (item.ownerId != null) {
+              traders.add(item.ownerId!);
+            }
+          }
+        }
+      }
+    }
+
+    return traders.length;
+  }
+
 }

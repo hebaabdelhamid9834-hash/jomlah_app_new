@@ -1227,6 +1227,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "total_orders_ucf": MessageLookupByLibrary.simpleMessage("إجمالي الطلبات"),
     "total_price_ucf": MessageLookupByLibrary.simpleMessage("السعر الكلي"),
     "total_sales_ucf": MessageLookupByLibrary.simpleMessage("إجمالي المبيعات"),
+    "trader": MessageLookupByLibrary.simpleMessage(
+      "لديك منتجات من أكثر من تاجر.\nسيتم زيادة رسوم الشحن لأن الطلب سيتم شحنه من أكثر من مصدر.",
+    ),
     "transaction_id_ucf": MessageLookupByLibrary.simpleMessage("رقم التحويلة"),
     "twitter_ucf": MessageLookupByLibrary.simpleMessage("تويتر"),
     "type_and_hit_enter_to_add_a_tag_ucf": MessageLookupByLibrary.simpleMessage(

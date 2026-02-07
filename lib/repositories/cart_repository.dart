@@ -84,7 +84,8 @@ class CartRepository {
 
   // cart process
   Future<dynamic> getCartProcessResponse(
-      String cartIds, String cartQuantities) async {
+      String cartIds, String cartQuantities) async
+  {
     var postBody = jsonEncode(
         {"cart_ids": cartIds, "cart_quantities": cartQuantities});
 
