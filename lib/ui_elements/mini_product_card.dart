@@ -285,14 +285,12 @@ class _MiniProductCardState extends State<MiniProductCard> {
                 Padding(
                   padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
                   child: Text(
-                    " ${ getNumberFromPrice(
                       SystemConfig.systemCurrency != null
                           ? widget.main_price?.replaceAll(
                           SystemConfig.systemCurrency!.code!,
                           SystemConfig.systemCurrency!.symbol!) ??
                           ''
                           : widget.main_price ?? '',
-                    )} ${AppLocalizations.of(context).ryial_ucf}",
                     maxLines: 1,
                     style: TextStyle(
                         color: Color(0xff000000),

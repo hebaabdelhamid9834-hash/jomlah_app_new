@@ -104,14 +104,13 @@ class _ProductCardBlackState extends State<ProductCardBlack> {
                         Padding(
                           padding: EdgeInsets.fromLTRB(16, 8, 16, 0),
                           child: Text(
-                            " ${ getNumberFromPrice(
+
                               SystemConfig.systemCurrency != null
                                   ? widget.stroked_price?.replaceAll(
                                   SystemConfig.systemCurrency!.code!,
                                   SystemConfig.systemCurrency!.symbol!) ??
                                   ''
                                   : widget.stroked_price ?? '',
-                            )} ${AppLocalizations.of(context).ryial_ucf}",
                             textAlign: TextAlign.left,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
@@ -128,14 +127,12 @@ class _ProductCardBlackState extends State<ProductCardBlack> {
                       Padding(
                         padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
                         child: Text(
-                          " ${ getNumberFromPrice(
                             SystemConfig.systemCurrency != null
                                 ? widget.main_price?.replaceAll(
                                 SystemConfig.systemCurrency!.code!,
                                 SystemConfig.systemCurrency!.symbol!) ??
                                 ''
                                 : widget.main_price ?? '',
-                          )} ${AppLocalizations.of(context).ryial_ucf}",
                           textAlign: TextAlign.left,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
