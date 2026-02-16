@@ -1,4 +1,5 @@
 import 'package:active_ecommerce_cms_demo_app/custom/device_info.dart';
+import 'package:active_ecommerce_cms_demo_app/custom/lang_text.dart';
 import 'package:active_ecommerce_cms_demo_app/custom/useful_elements.dart';
 import 'package:active_ecommerce_cms_demo_app/helpers/shimmer_helper.dart';
 import 'package:active_ecommerce_cms_demo_app/my_theme.dart';
@@ -70,7 +71,7 @@ class _BlogListScreenState extends State<BlogListScreen> {
             padding: EdgeInsets.only(left: 10),
             width: DeviceInfo(context).width! / 2,
             child: Text(
-              AppLocalizations.of(context).all_blogs_ucf,
+              LangText(context).local.blog_list,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),

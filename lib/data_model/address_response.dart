@@ -48,7 +48,10 @@ class Address {
     this.set_default,
     this.location_available,
     this.lat,
-    this.lang
+    this.lang,
+    this.area_id,
+    this.district,
+    this.area_name
   });
 
   int? id;
@@ -60,6 +63,10 @@ class Address {
   String? country_name;
   String? state_name;
   String? city_name;
+  int? area_id;
+  String ?area_name;
+  String? district;
+
   String? postal_code;
   String? phone;
   int? set_default;
@@ -83,6 +90,9 @@ class Address {
     location_available: json["location_available"],
     lat: json["lat"],
     lang: json["lang"],
+    area_id: json["area_id"],
+    area_name: json["area_name"],
+    district: json['district']
   );
 
   Map<String, dynamic> toJson() => {
@@ -101,5 +111,8 @@ class Address {
     "location_available": location_available,
     "lat": lat,
     "lang": lang,
+    "area_id":area_id,
+    "area_name":area_name,
+    "district":district
   };
 }

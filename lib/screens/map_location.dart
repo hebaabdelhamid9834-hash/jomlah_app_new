@@ -13,200 +13,202 @@ import 'package:active_ecommerce_cms_demo_app/custom/toast_component.dart';
 import 'package:active_ecommerce_cms_demo_app/my_theme.dart';
 import 'package:active_ecommerce_cms_demo_app/other_config.dart';
 import 'package:active_ecommerce_cms_demo_app/repositories/address_repository.dart';
+import 'package:active_ecommerce_cms_demo_app/screens/address.dart';
 import 'package:flutter/material.dart';
 import 'package:active_ecommerce_cms_demo_app/l10n/l10n.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart' hide Marker, LatLng;
 import 'package:google_maps_place_picker_mb/google_maps_place_picker.dart';
 
+import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
+
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
+import 'package:http/http.dart' as http;
+
 class MapLocation extends StatefulWidget {
-  MapLocation({super.key, this.address});
-  var address;
+  final dynamic address;
+
+  const MapLocation({Key? key, this.address}) : super(key: key);
 
   @override
   State<MapLocation> createState() => MapLocationState();
 }
 
-class MapLocationState extends State<MapLocation> with SingleTickerProviderStateMixin {
-  PickResult? selectedPlace;
-  static LatLng kInitialPosition = LatLng(
+class MapLocationState extends State<MapLocation> {
+  LatLng? selectedLatLng;
+
+  static LatLng kInitialPosition = const LatLng(
     51.52034098371205,
     -0.12637399200000668,
-  ); // London , arbitary value
+  );
 
-  GoogleMapController? _controller;
+  final MapController _mapController = MapController();
 
-  Future<void> _onMapCreated(GoogleMapController controller) async {
-    _controller = controller;
-    // String value = await DefaultAssetBundle.of(context)
-    //     .loadString('assets/map_style.json');
-    // _controller.setMapStyle(value);
-    setState(() {});
-  }
+  String? country;
+  String? state;
+  String? city;
+  String? suburb;
+  String? road;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
-    if (widget.address.location_available) {
-      setInitialLocation();
-    } else {
-      setDummyInitialLocation();
+    if (widget.address?.location_available == true) {
+      kInitialPosition =
+          LatLng(widget.address.lat, widget.address.lang);
     }
   }
 
-  setInitialLocation() {
-    kInitialPosition = LatLng(widget.address.lat, widget.address.lang);
-    setState(() {});
-  }
+  /// 🔹 Reverse Geocoding Function
+  Future<void> getAddressFromLatLng(double lat, double lng) async {
+    final url = Uri.parse(
+        'https://nominatim.openstreetmap.org/reverse?lat=$lat&lon=$lng&format=json');
 
-  setDummyInitialLocation() {
-    kInitialPosition = LatLng(
-      51.52034098371205,
-      -0.12637399200000668,
-    ); // London , arbitary value
-    setState(() {});
-  }
-
-  onTapPickHere(selectedPlace) async {
-    var addressUpdateLocationResponse = await AddressRepository().getAddressUpdateLocationResponse(
-      widget.address.id,
-      selectedPlace.geometry.location.lat,
-      selectedPlace.geometry.location.lng,
+    final response = await http.get(
+      url,
+      headers: {
+        'User-Agent': 'com.jomlah.android'
+      },
     );
 
-    if (addressUpdateLocationResponse.result == false) {
-      ToastComponent.showDialog(addressUpdateLocationResponse.message);
-      return;
-    }
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      final address = data['address'];
 
-    ToastComponent.showDialog(addressUpdateLocationResponse.message);
+      setState(() {
+        country = address['country'];
+        state = address['state'];
+        city = address['city'] ??
+            address['town'] ??
+            address['village'];
+        suburb = address['suburb'];
+        road = address['road'];
+      });
+
+      print("Country: $country");
+      print("State: $state");
+      print("City: $city");
+      print("Suburb: $suburb");
+      print("Road: $road");
+    } else {
+      print("Failed to fetch address");
+    }
+  }
+
+  Future<void> onTapPickHere() async {
+    if (selectedLatLng == null) return;
+
+    await getAddressFromLatLng(
+      selectedLatLng!.latitude,
+      selectedLatLng!.longitude,
+    );
+
+    // 🔹 Send lat/lng to backend
+    var addressUpdateLocationResponse =
+    await AddressRepository().getAddressUpdateLocationResponse(
+      widget.address.id,
+      selectedLatLng!.latitude,
+      selectedLatLng!.longitude,
+      country:country,
+      city:city,
+      area:state,
+      suburb:suburb,
+      road:road,
+
+    );
+
+    ToastComponent.showDialog(
+        addressUpdateLocationResponse.message);
+
+    if (!mounted) return;
+    Navigator.pop(context, true);
   }
 
   @override
   Widget build(BuildContext context) {
-    return PlacePicker(
-      hintText: AppLocalizations.of(context).your_delivery_location,
-      apiKey: OtherConfig.GOOGLE_MAP_API_KEY,
-      initialPosition: kInitialPosition,
-      useCurrentLocation: false,
-      //selectInitialPosition: true,
-      //onMapCreated: _onMapCreated, // this causes error , do not open this
-      //initialMapType: MapType.terrain,
-
-      //usePlaceDetailSearch: true,
-      onPlacePicked: (result) {
-        selectedPlace = result;
-
-        // print("onPlacePicked..."+result.toString());
-        // Navigator.of(context).pop();
-        setState(() {});
-      },
-      //forceSearchOnZoomChanged: true,
-      //automaticallyImplyAppBarLeading: false,
-      //autocompleteLanguage: "ko",
-      //region: 'au',
-      //selectInitialPosition: true,
-      selectedPlaceWidgetBuilder: (
-        _,
-        selectedPlace,
-        state,
-        isSearchBarFocused,
-      ) {
-        //print("state: $state, isSearchBarFocused: $isSearchBarFocused");
-        //print(selectedPlace.toString());
-        //print("-------------");
-        /*
-        if(!isSearchBarFocused && state != SearchingState.Searching){
-          ToastComponent.showDialog("Hello", context,
-              gravity: Toast.center, duration: Toast.lengthLong);
-        }*/
-        return isSearchBarFocused
-            ? Container()
-            : FloatingCard(
-                height: 50,
-                bottomPosition: 120.0,
-                // MediaQuery.of(context) will cause rebuild. See MediaQuery document for the information.
-                leftPosition: 0.0,
-                rightPosition: 0.0,
-                width: 500,
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(8.0),
-                  bottomLeft: Radius.circular(8.0),
-                  topRight: Radius.circular(8.0),
-                  bottomRight: Radius.circular(8.0),
-                ),
-                child: state == SearchingState.Searching
-                    ? Center(
-                        child: Text(
-                          AppLocalizations.of(context).calculating,
-                          style: TextStyle(color: MyTheme.font_grey),
-                        ),
-                      )
-                    : Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              flex: 2,
-                              child: Container(
-                                child: Center(
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(
-                                      left: 2.0,
-                                      right: 2.0,
-                                    ),
-                                    child: Text(
-                                      selectedPlace!.formattedAddress!,
-                                      maxLines: 2,
-                                      style: TextStyle(
-                                        color: MyTheme.medium_grey,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              flex: 1,
-                              child: Btn.basic(
-                                color: MyTheme.accent_color,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: const BorderRadius.only(
-                                    topLeft: Radius.circular(4.0),
-                                    bottomLeft: Radius.circular(4.0),
-                                    topRight: Radius.circular(4.0),
-                                    bottomRight: Radius.circular(4.0),
-                                  ),
-                                ),
-                                child: Text(
-                                  AppLocalizations.of(context).pick_here,
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                onPressed: () {
-                                  // IMPORTANT: You MUST manage selectedPlace data yourself as using this build will not invoke onPlacePicker as
-                                  //            this will override default 'Select here' Button.
-                                  /*print("do something with [selectedPlace] data");
-                                  print(selectedPlace.formattedAddress);
-                                  print(selectedPlace.geometry.location.lat);
-                                  print(selectedPlace.geometry.location.lng);*/
-
-                                  onTapPickHere(selectedPlace);
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
+    return Scaffold(
+      appBar: AppBar(
+        title:  Text(AppLocalizations.of(context).choose_an_address),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_outlined),
+          onPressed: () {
+            if (!mounted) return;
+            Navigator.pop(context);
+          },
+        ),
+      ),
+      body: Stack(
+        children: [
+          FlutterMap(
+            mapController: _mapController,
+            options: MapOptions(
+              initialCenter: kInitialPosition,
+              initialZoom: 15,
+              onTap: (tapPosition, point) {
+                setState(() {
+                  selectedLatLng = point;
+                });
+              },
+            ),
+            children: [
+              TileLayer(
+                urlTemplate:
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                userAgentPackageName:
+                'com.jomlah.android',
+              ),
+              if (selectedLatLng != null)
+                MarkerLayer(
+                  markers: [
+                    Marker(
+                      point: selectedLatLng!,
+                      width: 80,
+                      height: 80,
+                      child: const Icon(
+                        Icons.location_pin,
+                        size: 40,
+                        color: Colors.red,
                       ),
-              );
-      },
-      pinBuilder: (context, state) {
-        if (state == PinState.Idle) {
-          return Image.asset('assets/delivery_map_icon.png', height: 60);
-        } else {
-          return Image.asset('assets/delivery_map_icon.png', height: 80);
-        }
-      },
+                    ),
+                  ],
+                ),
+            ],
+          ),
+
+          /// 🔹 Address Preview Box
+          if (country != null)
+            Positioned(
+              top: 20,
+              left: 20,
+              right: 20,
+              child: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Text(
+                    "$road, $suburb\n$city, $state\n$country",
+                    style: const TextStyle(fontSize: 14),
+                  ),
+                ),
+              ),
+            ),
+
+          /// 🔹 Save Button
+          Positioned(
+            bottom: 30,
+            left: 20,
+            right: 20,
+            child: ElevatedButton(
+              onPressed: onTapPickHere,
+              child:  Text(AppLocalizations.of(context).save_ucf),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

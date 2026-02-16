@@ -323,8 +323,8 @@ class CartProvider extends ChangeNotifier {
 
   void getSetCartTotal() {
     _cartTotalString = _shopResponse!.grandTotal!.replaceAll(
-      SystemConfig.systemCurrency!.code!,
-      SystemConfig.systemCurrency!.symbol!,
+      SystemConfig.systemCurrency?.code??'',
+      SystemConfig.systemCurrency?.symbol??"",
     );
 
     notifyListeners();

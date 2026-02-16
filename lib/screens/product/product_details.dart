@@ -14,6 +14,7 @@ import 'package:active_ecommerce_cms_demo_app/helpers/shared_value_helper.dart';
 import 'package:active_ecommerce_cms_demo_app/helpers/shimmer_helper.dart';
 import 'package:active_ecommerce_cms_demo_app/helpers/system_config.dart';
 import 'package:active_ecommerce_cms_demo_app/l10n/l10n.dart';
+import 'package:active_ecommerce_cms_demo_app/main.dart';
 import 'package:active_ecommerce_cms_demo_app/my_theme.dart';
 import 'package:active_ecommerce_cms_demo_app/presenter/cart_counter.dart';
 import 'package:active_ecommerce_cms_demo_app/repositories/cart_repository.dart';
@@ -474,9 +475,18 @@ class _ProductDetailsState extends State<ProductDetails> with TickerProviderStat
                             borderRadius: BorderRadius.circular(8.0),
                             side: BorderSide(color: Colors.black, width: 1.0),
                           ),
-                          child: Text(
-                            AppLocalizations.of(context).copy_product_link_ucf,
-                            style: TextStyle(color: MyTheme.medium_grey),
+                          child: Column(
+                            children: [
+                              Text(
+                                AppLocalizations.of(context).copy_product_link_ucf,
+                                style: TextStyle(color: MyTheme.font_grey),
+                              ),
+                              Text(
+                                _productDetails!.link??'',
+                                style: TextStyle(color: MyTheme.medium_grey),maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
                           ),
                           onPressed: () {
                             onCopyTap(setState);
@@ -1580,12 +1590,12 @@ class _ProductDetailsState extends State<ProductDetails> with TickerProviderStat
           Padding(
             padding: const EdgeInsets.only(left: 5.0),
             child: Text(
-              SystemConfig.systemCurrency != null
+              keepNumbersOnly("${SystemConfig.systemCurrency != null
                   ? _totalPrice.toString().replaceAll(
-                        SystemConfig.systemCurrency!.code!,
-                        SystemConfig.systemCurrency!.symbol!,
-                      )
-                  : SystemConfig.systemCurrency!.symbol! + _totalPrice.toString(),
+                SystemConfig.systemCurrency?.code??'',
+                SystemConfig.systemCurrency?.symbol??'',
+              )
+                  : SystemConfig.systemCurrency?.symbol??'' + _totalPrice.toString()}"),
               style: TextStyle(
                 color: MyTheme.accent_color,
                 fontSize: 16.0,
@@ -1593,6 +1603,8 @@ class _ProductDetailsState extends State<ProductDetails> with TickerProviderStat
               ),
             ),
           ),
+          Image.asset("assets/ryial.jpg",width: 12,height: 12,)
+
         ],
       ),
     );
@@ -2033,13 +2045,13 @@ class _ProductDetailsState extends State<ProductDetails> with TickerProviderStat
   Row buildMainPriceRow() {
     return Row(
       children: [
-        Text(
-          SystemConfig.systemCurrency != null
-              ? _singlePriceString.replaceAll(
-                  SystemConfig.systemCurrency!.code,
-                  SystemConfig.systemCurrency!.symbol,
-                )
-              : _singlePriceString,
+        Text(keepNumbersOnly(SystemConfig.systemCurrency != null
+      ? _singlePriceString.replaceAll(
+      SystemConfig.systemCurrency!.code,
+      SystemConfig.systemCurrency!.symbol,
+    )
+        : _singlePriceString,),
+
           // _singlePriceString,
           style: TextStyle(
             color: Color(0xffE62E04),
@@ -2083,6 +2095,7 @@ class _ProductDetailsState extends State<ProductDetails> with TickerProviderStat
             ),
           ),
         ),
+
         Text(
           "/${_productDetails!.unit}",
           // _singlePriceString,
@@ -2092,6 +2105,8 @@ class _ProductDetailsState extends State<ProductDetails> with TickerProviderStat
             fontWeight: FontWeight.w600,
           ),
         ),
+        Image.asset("assets/ryial.jpg",width: 12,height: 12,),
+
       ],
     );
   }

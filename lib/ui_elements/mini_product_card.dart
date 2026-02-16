@@ -201,6 +201,7 @@
 
 import 'package:active_ecommerce_cms_demo_app/helpers/system_config.dart';
 import 'package:active_ecommerce_cms_demo_app/l10n/l10n.dart';
+import 'package:active_ecommerce_cms_demo_app/main.dart';
 import 'package:active_ecommerce_cms_demo_app/my_theme.dart';
 import 'package:active_ecommerce_cms_demo_app/screens/product/product_details.dart';
 import 'package:flutter/material.dart';
@@ -284,20 +285,25 @@ class _MiniProductCardState extends State<MiniProductCard> {
                 ),
                 Padding(
                   padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
-                  child: Text(
-                    " ${ getNumberFromPrice(
-                      SystemConfig.systemCurrency != null
-                          ? widget.main_price?.replaceAll(
-                          SystemConfig.systemCurrency!.code!,
-                          SystemConfig.systemCurrency!.symbol!) ??
-                          ''
-                          : widget.main_price ?? '',
-                    )} ${AppLocalizations.of(context).ryial_ucf}",
-                    maxLines: 1,
-                    style: TextStyle(
-                        color: Color(0xff000000),
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold),
+                  child: Row(
+                    children: [
+                      Text(keepNumbersOnly("${ getNumberFromPrice(
+                        SystemConfig.systemCurrency != null
+                            ? widget.main_price?.replaceAll(
+                            SystemConfig.systemCurrency!.code!,
+                            SystemConfig.systemCurrency!.symbol!) ??
+                            ''
+                            : widget.main_price ?? '',
+                      )}"),
+                        maxLines: 1,
+                        style: TextStyle(
+                            color: Color(0xff000000),
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Image.asset("assets/ryial.jpg",width: 12,height: 12,)
+
+                    ],
                   ),
                 ),
               ]),

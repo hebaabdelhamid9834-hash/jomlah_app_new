@@ -31,7 +31,7 @@ Map<String, String> get currencyHeader =>
 
 String convertPrice(String amount) {
   return amount.replaceAll(
-      SystemConfig.systemCurrency!.code!, SystemConfig.systemCurrency!.symbol!);
+      SystemConfig.systemCurrency?.code??'', SystemConfig.systemCurrency?.symbol??'');
 }
 
 String getParameter(GoRouterState state, String key) =>

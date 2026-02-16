@@ -9,6 +9,7 @@ class CategoryRepository {
     final response = await ApiRequest.get(url: url, headers: {
       "App-Language": app_language.$!,
     });
+    print("category response: " + response.body);
     return categoryResponseFromJson(response.body);
   }
 

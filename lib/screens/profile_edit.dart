@@ -50,7 +50,7 @@ class _ProfileEditState extends State<ProfileEdit> {
       builder: (BuildContext context) => AlertDialog(
         title: Text(AppLocalizations.of(context).photo_permission_ucf),
         // This is the most important part for Google's policy.
-        content: Text("To set your profile picture, this app needs to collect your image from the gallery."),
+        content: Text(AppLocalizations.of(context).to_set_your_profile_picture,textAlign: TextAlign.center,),
         actions: <Widget>[
           TextButton(
             // If user cancels, do nothing.
@@ -60,7 +60,7 @@ class _ProfileEditState extends State<ProfileEdit> {
           TextButton(
             // If user agrees, proceed.
             onPressed: () => Navigator.of(context).pop(true),
-            child: const Text("Agree"),
+            child:  Text(AppLocalizations.of(context).agree_ucf),
           ),
         ],
       ),
@@ -69,7 +69,7 @@ class _ProfileEditState extends State<ProfileEdit> {
 
     // If the user did not agree in the dialog, stop here.
     if (userAgreed == null || !userAgreed) {
-      ToastComponent.showDialog("Permission denied to access photos.");
+      // ToastComponent.showDialog(AppLocalizations.of(context).p);
       return;
     }
 
@@ -371,10 +371,10 @@ class _ProfileEditState extends State<ProfileEdit> {
           child: Center(
             child: Text(
               LangText(context).local.password_changes_ucf,
-              style: const TextStyle(
+              style:  TextStyle(
                 fontFamily: 'Public Sans',
                 fontSize: 16,
-                color: Color(0xffE62E04),
+                color: MyTheme.accent_color,
                 fontWeight: FontWeight.bold,
               ),
               textHeightBehavior: const TextHeightBehavior(applyHeightToFirstAscent: false),
@@ -430,7 +430,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                 padding: const EdgeInsets.only(top: 4.0),
                 child: Text(
                   AppLocalizations.of(context).password_must_contain_at_least_6_characters,
-                  style: const TextStyle(color: Color(0xffE62E04), fontStyle: FontStyle.italic),
+                  style:  TextStyle(color: MyTheme.accent_color, fontStyle: FontStyle.italic),
                 ),
               )
             ],

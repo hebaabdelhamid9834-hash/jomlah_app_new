@@ -185,10 +185,11 @@ class _SelectAddressState extends State<SelectAddress> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              buildShippingInfoItemAddress(index, selectAddressProvider),
-              buildShippingInfoItemCity(index, selectAddressProvider),
-              buildShippingInfoItemState(index, selectAddressProvider),
               buildShippingInfoItemCountry(index, selectAddressProvider),
+              buildShippingInfoItemCity(index, selectAddressProvider),
+              buildShippingInfoItemArea(index,selectAddressProvider),
+              buildShippingInfoItemDistrict(index,selectAddressProvider),
+              buildShippingInfoItemAddress(index, selectAddressProvider),
               buildShippingInfoItemPostalCode(index, selectAddressProvider),
               buildShippingInfoItemPhone(index, selectAddressProvider),
             ],
@@ -285,7 +286,7 @@ class _SelectAddressState extends State<SelectAddress> {
     );
   }
 
-  Padding buildShippingInfoItemState(index, selectAddressProvider) {
+  Padding buildShippingInfoItemArea(index, selectAddressProvider) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8.0),
       child: Row(
@@ -294,7 +295,7 @@ class _SelectAddressState extends State<SelectAddress> {
           Container(
             width: 75,
             child: Text(
-              LangText(context).local.state_ucf,
+              LangText(context).local.area_ucf,
               style: TextStyle(
                 color: MyTheme.grey_153,
               ),
@@ -303,7 +304,35 @@ class _SelectAddressState extends State<SelectAddress> {
           Container(
             width: 200,
             child: Text(
-              selectAddressProvider.shippingAddressList[index].state_name,
+              selectAddressProvider.shippingAddressList[index]?.area_name??'',
+              maxLines: 2,
+              style: TextStyle(
+                  color: MyTheme.dark_grey, fontWeight: FontWeight.w600),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+  Padding buildShippingInfoItemDistrict(index, selectAddressProvider) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 75,
+            child: Text(
+              LangText(context).local.district_ucf,
+              style: TextStyle(
+                color: MyTheme.grey_153,
+              ),
+            ),
+          ),
+          Container(
+            width: 200,
+            child: Text(
+              selectAddressProvider.shippingAddressList[index]?.district??'',
               maxLines: 2,
               style: TextStyle(
                   color: MyTheme.dark_grey, fontWeight: FontWeight.w600),
@@ -344,7 +373,8 @@ class _SelectAddressState extends State<SelectAddress> {
   }
 
   Padding buildShippingInfoItemAddress(index, selectAddressProvider) {
-    return Padding(
+    return
+      Padding(
       padding: const EdgeInsets.only(bottom: 8.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -352,7 +382,7 @@ class _SelectAddressState extends State<SelectAddress> {
           Container(
             width: 75,
             child: Text(
-              LangText(context).local.address_ucf,
+              LangText(context).local.street_name_ucf,
               style: TextStyle(
                 color: MyTheme.grey_153,
               ),

@@ -1,5 +1,6 @@
 import 'package:active_ecommerce_cms_demo_app/helpers/system_config.dart';
 import 'package:active_ecommerce_cms_demo_app/l10n/l10n.dart';
+import 'package:active_ecommerce_cms_demo_app/main.dart';
 import 'package:active_ecommerce_cms_demo_app/my_theme.dart';
 import 'package:active_ecommerce_cms_demo_app/screens/product/product_details.dart';
 import 'package:flutter/material.dart';
@@ -142,24 +143,30 @@ class _ProductCardState extends State<ProductCard> {
                       if (widget.has_discount)
                         Padding(
                           padding: EdgeInsets.fromLTRB(16, 8, 16, 0),
-                          child: Text(
-                          " ${ getNumberFromPrice(
-                              SystemConfig.systemCurrency != null
-                                  ? widget.stroked_price?.replaceAll(
-                                  SystemConfig.systemCurrency!.code!,
-                                  SystemConfig.systemCurrency!.symbol!) ??
-                                  ''
-                                  : widget.stroked_price ?? '',
-                            )} ${AppLocalizations.of(context).ryial_ucf}",
-                            textAlign: TextAlign.left,
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
-                            style: TextStyle(
-                              decoration: TextDecoration.lineThrough,
-                              color: MyTheme.medium_grey,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                            ),
+                          child: Row(
+                            children: [
+                              Text(keepNumbersOnly(" ${ getNumberFromPrice(
+                                SystemConfig.systemCurrency != null
+                                    ? widget.stroked_price?.replaceAll(
+                                    SystemConfig.systemCurrency!.code!,
+                                    SystemConfig.systemCurrency!.symbol!) ??
+                                    ''
+                                    : widget.stroked_price ?? '',
+                              )} ")
+                              ,
+                                textAlign: TextAlign.left,
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                                style: TextStyle(
+                                  decoration: TextDecoration.lineThrough,
+                                  color: MyTheme.medium_grey,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              Image.asset("assets/ryial.jpg",width: 12,height: 12,)
+
+                            ],
                           ),
                         )
                       else

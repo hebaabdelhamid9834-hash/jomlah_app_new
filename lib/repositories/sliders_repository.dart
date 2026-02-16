@@ -8,7 +8,7 @@ import 'package:active_ecommerce_cms_demo_app/repositories/api-request.dart';
 
 class SlidersRepository {
   Future<SliderResponse> getSliders() async {
-    String url = ("${AppConfig.BASE_URL}/sliders");
+    String url = ("${AppConfig.BASE_URL}/banners");
     final response = await ApiRequest.get(
       url: url,
       headers: {

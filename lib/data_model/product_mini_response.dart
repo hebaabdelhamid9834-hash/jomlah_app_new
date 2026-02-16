@@ -225,8 +225,8 @@ class Product {
   String? slug;
   String? name;
   String? thumbnail_image;
-  String? main_price;
-  String? stroked_price;
+  var main_price;
+  var stroked_price;
   bool? has_discount;
   var discount;
   int? rating;

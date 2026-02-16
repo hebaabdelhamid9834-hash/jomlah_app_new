@@ -49,7 +49,7 @@ class DeliveryStatus {
       ),
       DeliveryStatus(
         'on_the_way',
-        AppLocalizations.of(OneContext().context!)!.on_the_way_ucf,
+        AppLocalizations.of(OneContext().context!)!.on_the_way2_ucf,
       ),
       DeliveryStatus(
         'delivered',

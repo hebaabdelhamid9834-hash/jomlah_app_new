@@ -34,15 +34,15 @@ class _UploadFileState extends State<UploadFile> {
   TextEditingController searchEditingController = TextEditingController();
   String searchTxt = "";
 
-  //for image uploading
-
   CommonDropDownItem? sortBy;
-  List<CommonDropDownItem> sortList = [
-    CommonDropDownItem("newest", "Newest"),
-    CommonDropDownItem("oldest", "Oldest"),
-    CommonDropDownItem("smallest", "Smallest"),
-    CommonDropDownItem("largest", "Largest")
-  ];
+  List<CommonDropDownItem> getSortList(BuildContext context) {
+    return [
+      CommonDropDownItem("newest", LangText(context).local.newest),
+      CommonDropDownItem("oldest", LangText(context).local.oldest),
+      CommonDropDownItem("smallest", LangText(context).local.smallest),
+      CommonDropDownItem("largest", LangText(context).local.largest),
+    ];
+  }
 
   List<FileInfo> _images = [];
   List<FileInfo>? _selectedImages = [];
@@ -197,7 +197,7 @@ class _UploadFileState extends State<UploadFile> {
       _selectedImages = widget.prevData;
       setState(() {});
     }
-    sortBy = sortList.first;
+    // sortBy = sortList.first;
     fetchData();
     scrollControllerPosition();
     super.initState();
@@ -411,6 +411,9 @@ class _UploadFileState extends State<UploadFile> {
   }
 
   buildFilterSection(BuildContext context) {
+    final sortList = getSortList(context);
+    sortBy ??= sortList.first;
+
     return Column(
       children: [
         SizedBox(

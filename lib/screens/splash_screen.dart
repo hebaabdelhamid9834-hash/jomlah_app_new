@@ -1,8 +1,15 @@
 import 'dart:math' as math;
 
 import 'package:active_ecommerce_cms_demo_app/app_config.dart';
+import 'package:active_ecommerce_cms_demo_app/helpers/shared_value_helper.dart';
 import 'package:active_ecommerce_cms_demo_app/my_theme.dart';
 import 'package:active_ecommerce_cms_demo_app/screens/choose_language.dart';
+import 'package:active_ecommerce_cms_demo_app/screens/main.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:package_info_plus/package_info_plus.dart';
+
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -24,9 +31,6 @@ class _SplashScreenState extends State<SplashScreen>
   );
 
   late AnimationController _controller;
-
-  late Animation<double> bgFade;
-  late Animation<double> bgScale;
 
   late Animation<double> logoScale;
   late Animation<Offset> textSlide;
@@ -53,15 +57,6 @@ class _SplashScreenState extends State<SplashScreen>
       duration: const Duration(milliseconds: 2000),
     );
 
-    bgFade = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeIn),
-    );
-
-    bgScale = Tween<double>(begin: 1.1, end: 1).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeOut),
-    );
-
-    // 🔥 smoother pop for bigger logo
     logoScale = Tween<double>(begin: 0.4, end: 1).animate(
       CurvedAnimation(parent: _controller, curve: Curves.elasticOut),
     );
@@ -79,11 +74,23 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller.forward();
 
-    Future.delayed(const Duration(milliseconds: 4600), () {
-      if (!mounted) return;
+    /// Navigate after animation completes
+    _controller.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        Future.delayed(const Duration(milliseconds: 1200), () {
+          if (!mounted) return;
 
-      // 🔥 TODO: navigate to your next screen
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => ChooseLanguage()));
+          final bool isLoggedIn =
+              access_token.$ != null && access_token.$!.isNotEmpty;
+
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (_) => isLoggedIn ? Main() : ChooseLanguage(),
+            ),
+          );
+        });
+      }
     });
   }
 
@@ -95,120 +102,54 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
-    return splashScreen();
-  }
-
-  Widget splashScreen() {
     final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
-    // responsive logo size
-    final double logoSize = math.min(140.0, height * 0.18);
+    final double logoSize = math.min(150.0, height * 0.18);
 
-    return AnimatedBuilder(
-      animation: _controller,
-      builder: (context, child) {
-        return Scaffold(
-          backgroundColor: Colors.white,
-          body: Stack(
+    return Scaffold(
+      backgroundColor: MyTheme.accent_color,
+      body: AnimatedBuilder(
+        animation: _controller,
+        builder: (context, child) {
+          return Stack(
             children: [
-              /// 🔹 Background (fade + zoom)
-              // FadeTransition(
-              //   opacity: bgFade,
-              //   child: Transform.scale(
-              //     scale: bgScale.value,
-              //     child: Center(
-              //       child: Hero(
-              //         tag: "backgroundImageInSplash",
-              //         child: Image.asset(
-              //           "assets/splash_login_registration_background_image.png",
-              //           fit: BoxFit.cover,
-              //           height: height,
-              //           width: width,
-              //         ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
 
-              /// Gradient overlay for better contrast
-              Positioned.fill(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: MyTheme.accent_color,
-                    // gradient: LinearGradient(
-                    //   begin: Alignment.topCenter,
-                    //   end: Alignment.bottomCenter,
-                    //   colors: [
-                    //     // Colors.black.withOpacity(0.25),
-                    //     MyTheme.accent_color,
-                    //   ],
-                    //   stops: const [0.0, 1.0],
-                    // ),
-                  ),
-                ),
-              ),
-
-              /// 🔹 Center content
-              Positioned.fill(
-                top: height / 2 - 100,
+              /// 🔹 Center Content
+              Center(
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    /// 🔥 Bigger logo with pop animation
+
+                    /// Logo Animation
                     ScaleTransition(
                       scale: logoScale,
                       child: Hero(
                         tag: "splashscreenImage",
-                        child: Container(
-                          height: 150,
-                          width: 150,
-                          // padding: const EdgeInsets.all(18),
-                          // decoration: BoxDecoration(
-                          //   color: MyTheme.white,
-                          //   borderRadius: BorderRadius.circular(16),
-                          // ),
+                        child: SizedBox(
+                          height: logoSize,
+                          width: logoSize,
                           child: Image.asset(
                             "assets/appIcon_new.png",
-                            fit: BoxFit.fill,
+                            fit: BoxFit.contain,
                             color: Colors.white,
                           ),
                         ),
                       ),
                     ),
 
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 20),
 
-                    /// Text slide + fade
+                    /// App Name Animation
                     FadeTransition(
                       opacity: textFade,
                       child: SlideTransition(
                         position: textSlide,
-                        child: Column(
-                          children: [
-                            Text(
-                              AppConfig.app_name_splash,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                                color: Colors.white,
-                                // shadows: [
-                                //   Shadow(
-                                //     color: Colors.black45,
-                                //     blurRadius: 4,
-                                //     offset: Offset(0, 2),
-                                //   ),
-                                // ],
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            // Text(
-                            //  "V ${AppConfig.app_version}",
-                            //  style: const TextStyle(
-                            //     fontWeight: FontWeight.w500,
-                            //     fontSize: 14,
-                            //    color: Colors.black,
-                            //   ),
-                            // ),
-                          ],
+                        child: Text(
+                          AppConfig.app_name_splash,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
@@ -216,46 +157,36 @@ class _SplashScreenState extends State<SplashScreen>
                 ),
               ),
 
-              /// 🔹 Bottom copyright
-              ///
+              /// 🔹 Bottom Images
               Positioned(
                 bottom: 0,
                 left: 0,
                 right: 0,
                 child: FadeTransition(
                   opacity: textFade,
-                  child:Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Image.asset(
                         "assets/image 2.png",
                         fit: BoxFit.contain,
-                        width: 128,
-                        height: 200,
+                        width: 120,
+                        height: 160,
                       ),
                       SvgPicture.asset(
                         "assets/Group.svg",
                         fit: BoxFit.contain,
-                        width: 128,height: 200,
+                        width: 120,
+                        height: 160,
                       ),
-                     ],
-                  )
-                  // Center(
-                  //   child: Text(
-                  //     AppConfig.copyright_text,
-                  //     style: const TextStyle(
-                  //       fontWeight: FontWeight.w400,
-                  //       fontSize: 13,
-                  //      color: Colors.black,
-                  //     ),
-                  //   ),
-                  // ),
+                    ],
+                  ),
                 ),
               ),
             ],
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }

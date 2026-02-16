@@ -32,8 +32,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "Wholesale": MessageLookupByLibrary.simpleMessage("بالجملة"),
     "account_delete_ucf": MessageLookupByLibrary.simpleMessage("حذف الحساب"),
     "account_ucf": MessageLookupByLibrary.simpleMessage("حساب"),
-    "add_all_capital": MessageLookupByLibrary.simpleMessage("يضيف"),
-    "add_all_lower": MessageLookupByLibrary.simpleMessage("يضيف"),
+    "add_all_capital": MessageLookupByLibrary.simpleMessage("اضافة"),
+    "add_all_lower": MessageLookupByLibrary.simpleMessage("اضافة"),
     "add_location_ucf": MessageLookupByLibrary.simpleMessage("أضف الموقع"),
     "add_more_ucf": MessageLookupByLibrary.simpleMessage("أضف المزيد"),
     "add_new_address": MessageLookupByLibrary.simpleMessage("أضف عناوين جديدة"),
@@ -47,14 +47,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "أضف منتجات جديدة",
     ),
     "add_to_cart_ucf": MessageLookupByLibrary.simpleMessage("أضف إلى السلة"),
-    "add_ucf": MessageLookupByLibrary.simpleMessage("يضيف"),
+    "add_ucf": MessageLookupByLibrary.simpleMessage("اضافة"),
     "add_your_coupon_code_ucf": MessageLookupByLibrary.simpleMessage(
       "أضف رمز القسيمة الخاص بك",
     ),
     "added_to_cart": MessageLookupByLibrary.simpleMessage(
       "تمت الإضافة إلى عربة التسوق",
     ),
-    "address_ucf": MessageLookupByLibrary.simpleMessage("عنوان"),
+    "address_ucf": MessageLookupByLibrary.simpleMessage("اسم الشارع"),
     "addresses_of_user": MessageLookupByLibrary.simpleMessage(
       "عناوين المستخدمين",
     ),
@@ -126,6 +126,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "are_you_sure_to_request_cancellation":
         MessageLookupByLibrary.simpleMessage("هل أنت متأكد من طلب الإلغاء؟"),
+    "area_ucf": MessageLookupByLibrary.simpleMessage("منطقة"),
     "ask_for_refund_ucf": MessageLookupByLibrary.simpleMessage("اطلب استرداد"),
     "assigned": MessageLookupByLibrary.simpleMessage("متهم"),
     "at_least_one_star_must_be_given": MessageLookupByLibrary.simpleMessage(
@@ -219,13 +220,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "buy_package_ucf": MessageLookupByLibrary.simpleMessage("شراء حزمة"),
     "calculating": MessageLookupByLibrary.simpleMessage("تشغيل الحساب ..."),
     "calculating_ucf": MessageLookupByLibrary.simpleMessage("حساب"),
-    "cancel_all_capital": MessageLookupByLibrary.simpleMessage("يقضي على"),
-    "cancel_all_lower": MessageLookupByLibrary.simpleMessage("يقضي على"),
+    "cancel_all_capital": MessageLookupByLibrary.simpleMessage("لا"),
+    "cancel_all_lower": MessageLookupByLibrary.simpleMessage(" لا"),
     "cancel_order_ucf": MessageLookupByLibrary.simpleMessage("إلغاء الأمر"),
     "cancel_request_is_already_send": MessageLookupByLibrary.simpleMessage(
       "تم تقديم طلب الإلغاء بالفعل",
     ),
-    "cancel_ucf": MessageLookupByLibrary.simpleMessage("يقضي على"),
+    "cancel_ucf": MessageLookupByLibrary.simpleMessage("لا "),
     "cancelled_delivery_ucf": MessageLookupByLibrary.simpleMessage(
       "التسليم ملغى",
     ),
@@ -236,13 +237,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "نقاط الناقل غير متوفرة",
     ),
     "carrier_ucf": MessageLookupByLibrary.simpleMessage("الناقل"),
-    "cart_is_empty": MessageLookupByLibrary.simpleMessage("البطاقة فارغة"),
+    "cart_is_empty": MessageLookupByLibrary.simpleMessage("العربة فارغة"),
     "cart_ucf": MessageLookupByLibrary.simpleMessage("عربة التسوق"),
     "cash_on_delivery_ucf": MessageLookupByLibrary.simpleMessage(
       "الدفع عند الاستلام",
     ),
     "cash_payment": MessageLookupByLibrary.simpleMessage("الدفع نقدا"),
-    "categories_ucf": MessageLookupByLibrary.simpleMessage("فئات"),
+    "categories_ucf": MessageLookupByLibrary.simpleMessage("اقسام"),
     "change_bid_ucf": MessageLookupByLibrary.simpleMessage("تغيير العطاء"),
     "change_language_ucf": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
     "change_password_ucf": MessageLookupByLibrary.simpleMessage(
@@ -262,7 +263,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "choose_language_ucf": MessageLookupByLibrary.simpleMessage("اختر اللغة"),
     "city_ucf": MessageLookupByLibrary.simpleMessage("مدينة"),
     "classified_ads_ucf": MessageLookupByLibrary.simpleMessage(
-      "الإعلانات المبوبة",
+      "الإعلانات المصنفة",
     ),
     "classified_products": MessageLookupByLibrary.simpleMessage(
       "المنتجات المصنفة",
@@ -270,9 +271,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "clear_all_capital": MessageLookupByLibrary.simpleMessage("واضح"),
     "clear_all_lower": MessageLookupByLibrary.simpleMessage("واضح"),
     "clear_ucf": MessageLookupByLibrary.simpleMessage("واضح"),
-    "close_all_capital": MessageLookupByLibrary.simpleMessage("يغلق"),
-    "close_all_lower": MessageLookupByLibrary.simpleMessage("يغلق"),
-    "close_ucf": MessageLookupByLibrary.simpleMessage("يغلق"),
+    "close_all_capital": MessageLookupByLibrary.simpleMessage("الغاء"),
+    "close_all_lower": MessageLookupByLibrary.simpleMessage("الغاء"),
+    "close_ucf": MessageLookupByLibrary.simpleMessage("اغلاق"),
     "club_point_ucf": MessageLookupByLibrary.simpleMessage("كلوب بوينت"),
     "collection_ucf": MessageLookupByLibrary.simpleMessage("مجموعة"),
     "color_ucf": MessageLookupByLibrary.simpleMessage("لون"),
@@ -288,16 +289,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "configure_your_payment_method": MessageLookupByLibrary.simpleMessage(
       "تكوين طريقة الدفع الخاصة بك.",
     ),
-    "confirm_all_capital": MessageLookupByLibrary.simpleMessage("بالتأكيد"),
-    "confirm_all_lower": MessageLookupByLibrary.simpleMessage("بالتأكيد"),
-    "confirm_ucf": MessageLookupByLibrary.simpleMessage("بالتأكيد"),
+    "confirm_all_capital": MessageLookupByLibrary.simpleMessage("تأكيد"),
+    "confirm_all_lower": MessageLookupByLibrary.simpleMessage("تأكيد"),
+    "confirm_ucf": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "confirm_your_password": MessageLookupByLibrary.simpleMessage(
       "أكد رقمك السري",
     ),
-    "confirmed_ucf": MessageLookupByLibrary.simpleMessage("تأكيد"),
+    "confirmed_ucf": MessageLookupByLibrary.simpleMessage(" تم تأكيد الطلب"),
     "congratulations_ucf": MessageLookupByLibrary.simpleMessage("تهانينا !!"),
+    "contact_ucf": MessageLookupByLibrary.simpleMessage("تواصل معنا "),
     "continue_to_delivery_info_ucf": MessageLookupByLibrary.simpleMessage(
-      "تواصل إلى تسليم المعلومات",
+      "تابع إلى معلومات التسليم",
     ),
     "continue_ucf": MessageLookupByLibrary.simpleMessage("مكتمل"),
     "conversation_ucf": MessageLookupByLibrary.simpleMessage("محادثة"),
@@ -343,13 +345,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "هل تريد حذف حسابك من نظامنا؟",
     ),
     "delete_my_account": MessageLookupByLibrary.simpleMessage("احذف حسابي"),
-    "delete_ucf": MessageLookupByLibrary.simpleMessage("يمسح"),
-    "delivered_ucf": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
+    "delete_ucf": MessageLookupByLibrary.simpleMessage("حذف"),
+    "delivered_ucf": MessageLookupByLibrary.simpleMessage("تم التسليم"),
     "delivery_boy_pickup_point": MessageLookupByLibrary.simpleMessage(
       "فتى التوصيل يلتقط نقطة",
     ),
     "delivery_status_ucf": MessageLookupByLibrary.simpleMessage("حالة التسليم"),
-    "deny_ucf": MessageLookupByLibrary.simpleMessage("ينفي"),
+    "deny_ucf": MessageLookupByLibrary.simpleMessage("غير موافق"),
     "description_ucf": MessageLookupByLibrary.simpleMessage("وصف:"),
     "digital_product_screen_": MessageLookupByLibrary.simpleMessage(
       "منتج رقمي",
@@ -365,6 +367,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "نطاق تاريخ الخصم",
     ),
     "discount_ucf": MessageLookupByLibrary.simpleMessage("تخفيض"),
+    "district_ucf": MessageLookupByLibrary.simpleMessage("الحي"),
     "do_you_want_close_the_app": MessageLookupByLibrary.simpleMessage(
       "هل تريد إغلاق التطبيق؟",
     ),
@@ -388,19 +391,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "edit_profile_ucf": MessageLookupByLibrary.simpleMessage(
       "تعديل الملف الشخصي",
     ),
-    "edit_ucf": MessageLookupByLibrary.simpleMessage("يطلق"),
+    "edit_ucf": MessageLookupByLibrary.simpleMessage("تعديل"),
     "email_account_ucf": MessageLookupByLibrary.simpleMessage(
       "حساب البريد الإلكتروني",
     ),
     "email_ucf": MessageLookupByLibrary.simpleMessage("بريد إلكتروني"),
     "ended_ucf": MessageLookupByLibrary.simpleMessage("أنهيت"),
-    "enter_address_ucf": MessageLookupByLibrary.simpleMessage("أدخل العنوان"),
+    "enter_address_ucf": MessageLookupByLibrary.simpleMessage(
+      "أدخل اسم الشارع",
+    ),
     "enter_amount_ucf": MessageLookupByLibrary.simpleMessage("أدخل المبلغ"),
+    "enter_area_ucf": MessageLookupByLibrary.simpleMessage("أدخل المنطقة"),
     "enter_city_ucf": MessageLookupByLibrary.simpleMessage("أدخل المدينة"),
     "enter_country_ucf": MessageLookupByLibrary.simpleMessage("أدخل الدولة"),
     "enter_coupon_code": MessageLookupByLibrary.simpleMessage(
       "أدخل رمز القسيمة",
     ),
+    "enter_district_ucf": MessageLookupByLibrary.simpleMessage("أدخل الحي"),
     "enter_email": MessageLookupByLibrary.simpleMessage(
       "أدخل البريد الإلكتروني",
     ),
@@ -418,6 +425,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "enter_reason_ucf": MessageLookupByLibrary.simpleMessage("أدخل السبب"),
     "enter_state_ucf": MessageLookupByLibrary.simpleMessage("أدخل الولاية"),
+    "enter_streetName_ucf": MessageLookupByLibrary.simpleMessage(
+      "أدخل اسم الشارع",
+    ),
     "enter_the_code": MessageLookupByLibrary.simpleMessage("ادخل الرمز"),
     "enter_the_code_sent": MessageLookupByLibrary.simpleMessage(
       "أدخل الرمز المرسل",
@@ -447,7 +457,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "البائع المفضل",
     ),
     "featured_categories_ucf": MessageLookupByLibrary.simpleMessage(
-      "فئات مميزة",
+      "اقسام مميزة",
     ),
     "featured_products_ucf": MessageLookupByLibrary.simpleMessage(
       "منتجات مميزة",
@@ -504,7 +514,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "مرحبا أهلا وسهلا",
     ),
     "highest_bid_ucf": MessageLookupByLibrary.simpleMessage("منظر علوي"),
-    "home_delivery_ucf": MessageLookupByLibrary.simpleMessage("توصيل منزلي"),
+    "home_delivery_ucf": MessageLookupByLibrary.simpleMessage("توصيل للمنزل"),
     "home_ucf": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "if_you_are_finding_any_problem_while_logging_in":
         MessageLookupByLibrary.simpleMessage(
@@ -515,10 +525,10 @@ class MessageLookup extends MessageLookupByLibrary {
           "في حالة وجود أي صعوبات ، اتصل بالمسؤول.",
         ),
     "in_your_cart_all_lower": MessageLookupByLibrary.simpleMessage(
-      "في عربة التسوق الخاصة بك",
+      "في سله التسوق",
     ),
     "in_your_wishlist_all_lower": MessageLookupByLibrary.simpleMessage(
-      "في قائمة أمنياتك",
+      "في المفضلة",
     ),
     "info_ucf": MessageLookupByLibrary.simpleMessage("معلومة"),
     "instagram_ucf": MessageLookupByLibrary.simpleMessage("انستغرام"),
@@ -534,6 +544,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "join_ucf": MessageLookupByLibrary.simpleMessage("ينضم"),
     "language_ucf": MessageLookupByLibrary.simpleMessage("لغة"),
+    "largest": MessageLookupByLibrary.simpleMessage("الأكبر"),
     "last_recharged": MessageLookupByLibrary.simpleMessage("الشحن الأخير"),
     "last_view_product_ucf": MessageLookupByLibrary.simpleMessage(
       "آخر منتج تم عرضه",
@@ -544,11 +555,17 @@ class MessageLookup extends MessageLookupByLibrary {
           "اتركه فارغًا إذا كنت لا تستخدم ارتباط موقع خارجي",
         ),
     "load_more_ucf": MessageLookupByLibrary.simpleMessage("تحميل المزيد"),
+    "loading_area_ucf": MessageLookupByLibrary.simpleMessage(
+      "تحميل المنطقة ...",
+    ),
     "loading_cities_ucf": MessageLookupByLibrary.simpleMessage(
       "تحميل المدن ...",
     ),
     "loading_countries_ucf": MessageLookupByLibrary.simpleMessage(
       "تحميل البلدان ...",
+    ),
+    "loading_district_ucf": MessageLookupByLibrary.simpleMessage(
+      "تحميل الحي ...",
     ),
     "loading_more_brands_ucf": MessageLookupByLibrary.simpleMessage(
       "جارٍ تحميل المزيد من العلامات التجارية ...",
@@ -615,6 +632,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "make_offline_payment_ucf": MessageLookupByLibrary.simpleMessage(
       "قم بالدفع دون اتصال بالإنترنت",
     ),
+    "make_payment_ucf": MessageLookupByLibrary.simpleMessage("قم بالدفع"),
     "manage_n_organize_your_shop": MessageLookupByLibrary.simpleMessage(
       "إدارة وتنظيم متجرك.",
     ),
@@ -656,7 +674,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "my_orders_ucf": MessageLookupByLibrary.simpleMessage("طلباتي"),
     "my_products_ucf": MessageLookupByLibrary.simpleMessage("منتجاتي"),
     "my_wallet_ucf": MessageLookupByLibrary.simpleMessage("محفظتى"),
-    "my_wishlist_ucf": MessageLookupByLibrary.simpleMessage("قائمة امنياتي"),
+    "my_wishlist_ucf": MessageLookupByLibrary.simpleMessage("المفضلة"),
     "name_ucf": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "network_error": MessageLookupByLibrary.simpleMessage(
       "هناك شئ غير صحيح. خطأ في الشبكة",
@@ -668,9 +686,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "new_password_ucf": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور الجديدة",
     ),
-    "no_address_is_added": MessageLookupByLibrary.simpleMessage(
-      "لم يتم إضافة عناوين",
-    ),
+    "newest": MessageLookupByLibrary.simpleMessage("الأحدث"),
+    "no_address_is_added": MessageLookupByLibrary.simpleMessage(" إضافة عنوان"),
     "no_brand_is_available": MessageLookupByLibrary.simpleMessage(
       "لا توجد علامة تجارية متاحة",
     ),
@@ -711,6 +728,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_item_ordered": MessageLookupByLibrary.simpleMessage(
       "لم يتم طلب أي عناصر",
     ),
+    "no_items": MessageLookupByLibrary.simpleMessage("لا يوجد عناصر"),
     "no_language_is_added": MessageLookupByLibrary.simpleMessage(
       "لا توجد لغة مضافة",
     ),
@@ -787,10 +805,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "غير متصل على الانترنت",
     ),
     "ok": MessageLookupByLibrary.simpleMessage("نعم"),
+    "oldest": MessageLookupByLibrary.simpleMessage("الأقدم"),
     "on_auction_products_ucf": MessageLookupByLibrary.simpleMessage(
       "على منتجات المزاد",
     ),
-    "on_the_way_ucf": MessageLookupByLibrary.simpleMessage("على الطريق"),
+    "on_the_way2_ucf": MessageLookupByLibrary.simpleMessage("في الطريق "),
+    "on_the_way_ucf": MessageLookupByLibrary.simpleMessage("في الطريق اليك"),
     "only_image_file_allowed": MessageLookupByLibrary.simpleMessage(
       "يسمح فقط بملف الصورة",
     ),
@@ -814,6 +834,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "or_send_code_via_phone_number": MessageLookupByLibrary.simpleMessage(
       "أو أرسل الرمز عبر رقم الهاتف",
     ),
+    "order_Re_payment": MessageLookupByLibrary.simpleMessage(
+      "إعادة سداد الطلب",
+    ),
     "order_code_ucf": MessageLookupByLibrary.simpleMessage("كود الطلب"),
     "order_date_ucf": MessageLookupByLibrary.simpleMessage("تاريخ تقديم الطلب"),
     "order_details_ucf": MessageLookupByLibrary.simpleMessage("تفاصيل الطلب"),
@@ -827,7 +850,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تنتهي العبوة في:",
     ),
     "packages_ucf": MessageLookupByLibrary.simpleMessage("الحزم"),
-    "paid_ucf": MessageLookupByLibrary.simpleMessage("البراز"),
+    "paid_ucf": MessageLookupByLibrary.simpleMessage("مدفوع"),
     "password_changed_ucf": MessageLookupByLibrary.simpleMessage(
       "تم تغيير كلمة السر",
     ),
@@ -905,7 +928,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "pickup_point_is_unavailable_ucf": MessageLookupByLibrary.simpleMessage(
       "نقطة الالتقاط غير متوفرة",
     ),
-    "pickup_point_ucf": MessageLookupByLibrary.simpleMessage("نقطة الالتقاط"),
+    "pickup_point_ucf": MessageLookupByLibrary.simpleMessage("مكان الاستلام"),
     "place_bid_price_ucf": MessageLookupByLibrary.simpleMessage(
       "مكان سعر العطاء",
     ),
@@ -932,6 +955,9 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "الرجاء تسجيل الدخول لعرض عناصر قائمة الرغبات",
         ),
+    "please_select_a_city_first": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار المدينة أولاً",
+    ),
     "please_select_minimum_1_product_ucf": MessageLookupByLibrary.simpleMessage(
       "الرجاء تحديد منتج واحد على الأقل",
     ),
@@ -960,7 +986,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "price_ucf": MessageLookupByLibrary.simpleMessage("سعر"),
     "proceed_all_caps": MessageLookupByLibrary.simpleMessage("يكمل"),
     "proceed_to_checkout": MessageLookupByLibrary.simpleMessage(
-      "الشروع في الخروج",
+      "المتابعة إلى إتمام الطلب",
     ),
     "proceed_to_shipping_ucf": MessageLookupByLibrary.simpleMessage(
       "اذهب إلى الشحن",
@@ -990,7 +1016,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "products_you_may_also_like": MessageLookupByLibrary.simpleMessage(
       "المنتجات التي قد تعجبك أيضا",
     ),
-    "profile_ucf": MessageLookupByLibrary.simpleMessage("حساب الملف الشخصي"),
+    "profile_ucf": MessageLookupByLibrary.simpleMessage(" الملف الشخصي"),
     "provide_a_detailed_description": MessageLookupByLibrary.simpleMessage(
       "قدم وصفاً مفصلاً",
     ),
@@ -1015,7 +1041,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "refundable_ucf": MessageLookupByLibrary.simpleMessage("برد"),
     "refunded_ucf": MessageLookupByLibrary.simpleMessage("القيامة"),
     "registration": MessageLookupByLibrary.simpleMessage("تسجيل"),
-    "reject_ucf": MessageLookupByLibrary.simpleMessage("يرفض"),
+    "reject_ucf": MessageLookupByLibrary.simpleMessage("رفض"),
     "rejected_ucf": MessageLookupByLibrary.simpleMessage("غير مقبول"),
     "remaining_uploads": MessageLookupByLibrary.simpleMessage(
       "التنزيلات المتبقية",
@@ -1044,7 +1070,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "save_n_unpublish_ucf": MessageLookupByLibrary.simpleMessage(
       "حفظ & إلغاء النشر",
     ),
-    "save_ucf": MessageLookupByLibrary.simpleMessage("يحفظ"),
+    "save_ucf": MessageLookupByLibrary.simpleMessage("حفظ"),
     "search_here_ucf": MessageLookupByLibrary.simpleMessage("ابحث هنا ؟"),
     "search_in_a_gmlah": MessageLookupByLibrary.simpleMessage(
       "البحث فى جملة...",
@@ -1071,6 +1097,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "select_a_state_first": MessageLookupByLibrary.simpleMessage(
       "حدد ولاية أولاً",
     ),
+    "select_area_ucf": MessageLookupByLibrary.simpleMessage("اختر المنطقة"),
+    "select_district_ucf": MessageLookupByLibrary.simpleMessage("اختر الحي"),
     "select_payment_option_ucf": MessageLookupByLibrary.simpleMessage(
       "حدد خيار الدفع",
     ),
@@ -1158,6 +1186,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sign_up_ucf": MessageLookupByLibrary.simpleMessage("الاشتراك"),
     "sku_all_capital": MessageLookupByLibrary.simpleMessage("SKU"),
     "slug_ucf": MessageLookupByLibrary.simpleMessage("سبيكة"),
+    "smallest": MessageLookupByLibrary.simpleMessage("الأصغر"),
     "social_media_link": MessageLookupByLibrary.simpleMessage(
       "رابط وسائل التواصل الاجتماعي",
     ),
@@ -1171,6 +1200,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "حالة رؤية المخزون",
     ),
     "store_home_ucf": MessageLookupByLibrary.simpleMessage("متجر المنزل"),
+    "street_name_ucf": MessageLookupByLibrary.simpleMessage("اسم الشارع"),
     "sub_total_all_capital": MessageLookupByLibrary.simpleMessage(
       "المجموع الفرعي",
     ),
@@ -1207,6 +1237,9 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "لإضافة أو تحرير العناوين ، انتقل إلى صفحة العنوان",
         ),
+    "to_set_your_profile_picture": MessageLookupByLibrary.simpleMessage(
+      "لتعيين صورة ملفك الشخصي، يحتاج هذا التطبيق إلى الوصول إلى صورتك من المعرض.",
+    ),
     "today_ucf": MessageLookupByLibrary.simpleMessage("اليوم"),
     "todays_deal_ucf": MessageLookupByLibrary.simpleMessage("صفقة اليوم"),
     "top_categories_ucf": MessageLookupByLibrary.simpleMessage("أعلى الفئات"),
@@ -1247,8 +1280,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "unit_price_ucf": MessageLookupByLibrary.simpleMessage("سعر الوحدة"),
     "unit_ucf": MessageLookupByLibrary.simpleMessage("الوحدة"),
     "unpaid_ucf": MessageLookupByLibrary.simpleMessage("غير مدفوع الأجر"),
-    "update_all_capital": MessageLookupByLibrary.simpleMessage("للتحديث"),
-    "update_all_lower": MessageLookupByLibrary.simpleMessage("للتحديث"),
+    "update_all_capital": MessageLookupByLibrary.simpleMessage("تحديث"),
+    "update_all_lower": MessageLookupByLibrary.simpleMessage("تحديث"),
     "update_cart_ucf": MessageLookupByLibrary.simpleMessage(
       "قم بتحديث سلة التسوق الخاصة بك",
     ),
@@ -1259,7 +1292,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "update_product_ucf": MessageLookupByLibrary.simpleMessage("تحديث المنتج"),
     "update_profile_ucf": MessageLookupByLibrary.simpleMessage("تحديث الملف"),
-    "update_ucf": MessageLookupByLibrary.simpleMessage("للتحديث"),
+    "update_ucf": MessageLookupByLibrary.simpleMessage("تحديث"),
     "upgrade_package_ucf": MessageLookupByLibrary.simpleMessage("حزمة الترقية"),
     "upload_file": MessageLookupByLibrary.simpleMessage("تحميل ملف"),
     "upload_file_permission_denied": MessageLookupByLibrary.simpleMessage(
@@ -1355,7 +1388,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "your_delivery_location": MessageLookupByLibrary.simpleMessage(
       "موقع التسليم الخاص بك. . .",
     ),
-    "your_ordered_all_lower": MessageLookupByLibrary.simpleMessage("انا سألت"),
+    "your_ordered_all_lower": MessageLookupByLibrary.simpleMessage("طلباتك"),
     "youtube_ucf": MessageLookupByLibrary.simpleMessage("موقع YouTube"),
   };
 }

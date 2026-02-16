@@ -279,7 +279,7 @@ class _OrderDetailsState extends State<OrderDetails> {
       context,
       MaterialPageRoute(
         builder: (context) => Checkout(
-          title: "Order Re Payment",
+          title:  AppLocalizations.of(context).order_Re_payment,
           rechargeAmount: convertedAmount,
           paymentFor: PaymentFor.OrderRePayment,
           packageId: 0,

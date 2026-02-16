@@ -6658,6 +6658,168 @@ class AppLocalizations {
   String get ryial_ucf {
     return Intl.message('Ryial', name: 'ryial_ucf', desc: '', args: []);
   }
+
+  /// `On the way`
+  String get on_the_way2_ucf {
+    return Intl.message(
+      'On the way',
+      name: 'on_the_way2_ucf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `District`
+  String get district_ucf {
+    return Intl.message('District', name: 'district_ucf', desc: '', args: []);
+  }
+
+  /// `Enter district`
+  String get enter_district_ucf {
+    return Intl.message(
+      'Enter district',
+      name: 'enter_district_ucf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading district...`
+  String get loading_district_ucf {
+    return Intl.message(
+      'Loading district...',
+      name: 'loading_district_ucf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select district`
+  String get select_district_ucf {
+    return Intl.message(
+      'Select district',
+      name: 'select_district_ucf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Area`
+  String get area_ucf {
+    return Intl.message('Area', name: 'area_ucf', desc: '', args: []);
+  }
+
+  /// `Enter area`
+  String get enter_area_ucf {
+    return Intl.message(
+      'Enter area',
+      name: 'enter_area_ucf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading area...`
+  String get loading_area_ucf {
+    return Intl.message(
+      'Loading area...',
+      name: 'loading_area_ucf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select area`
+  String get select_area_ucf {
+    return Intl.message(
+      'Select area',
+      name: 'select_area_ucf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter street name`
+  String get enter_streetName_ucf {
+    return Intl.message(
+      'Enter street name',
+      name: 'enter_streetName_ucf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Street name`
+  String get street_name_ucf {
+    return Intl.message(
+      'Street name',
+      name: 'street_name_ucf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Re Payment`
+  String get order_Re_payment {
+    return Intl.message(
+      'Order Re Payment',
+      name: 'order_Re_payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact us`
+  String get contact_ucf {
+    return Intl.message('Contact us', name: 'contact_ucf', desc: '', args: []);
+  }
+
+  /// `no items found`
+  String get no_items {
+    return Intl.message('no items found', name: 'no_items', desc: '', args: []);
+  }
+
+  /// `Please select a city first`
+  String get please_select_a_city_first {
+    return Intl.message(
+      'Please select a city first',
+      name: 'please_select_a_city_first',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Newest`
+  String get newest {
+    return Intl.message('Newest', name: 'newest', desc: '', args: []);
+  }
+
+  /// `Oldest`
+  String get oldest {
+    return Intl.message('Oldest', name: 'oldest', desc: '', args: []);
+  }
+
+  /// `Smallest`
+  String get smallest {
+    return Intl.message('Smallest', name: 'smallest', desc: '', args: []);
+  }
+
+  /// `Largest`
+  String get largest {
+    return Intl.message('Largest', name: 'largest', desc: '', args: []);
+  }
+
+  /// `To set your profile picture, this app needs to collect your image from the gallery.`
+  String get to_set_your_profile_picture {
+    return Intl.message(
+      'To set your profile picture, this app needs to collect your image from the gallery.',
+      name: 'to_set_your_profile_picture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  // skipped getter for the 'permission_denied_to_access_photos.' key
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

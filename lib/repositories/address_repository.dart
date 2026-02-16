@@ -8,6 +8,7 @@ import 'package:active_ecommerce_cms_demo_app/data_model/address_response.dart';
 import 'package:active_ecommerce_cms_demo_app/data_model/address_update_in_cart_response.dart';
 import 'package:active_ecommerce_cms_demo_app/data_model/address_update_location_response.dart';
 import 'package:active_ecommerce_cms_demo_app/data_model/address_update_response.dart';
+import 'package:active_ecommerce_cms_demo_app/data_model/area_response.dart';
 import 'package:active_ecommerce_cms_demo_app/data_model/city_response.dart';
 import 'package:active_ecommerce_cms_demo_app/data_model/country_response.dart';
 import 'package:active_ecommerce_cms_demo_app/data_model/shipping_cost_response.dart';
@@ -49,21 +50,23 @@ class AddressRepository {
   Future<dynamic> getAddressAddResponse(
       {required String address,
       required int? country_id,
-      required int? state_id,
+     // required int? state_id,
       required int? city_id,
       required String postal_code,
-      required String phone}) async {
+      required String phone, required String district, required area_id, required String area}) async {
     var postBody = jsonEncode({
       "user_id": "${user_id.$}",
       "address": address,
       "country_id": "$country_id",
-      "state_id": "$state_id",
+      "state_id": "1",
+      "area_id":area_id,
+      "area":area,
+      "district":district,
       "city_id": "$city_id",
-
       "postal_code": postal_code,
       "phone": phone
     });
-
+print("postBody ${postBody}");
     String url = ("${AppConfig.BASE_URL}/user/shipping/create");
     final response = await ApiRequest.post(
       url: url,
@@ -87,14 +90,16 @@ class AddressRepository {
 
       required int? city_id,
       required String postal_code,
-      required String phone}) async {
+      required String phone, int? area_id, required String district, required String area}) async {
     var postBody = jsonEncode({
       "id": "$id",
       "user_id": "${user_id.$}",
       "address": address,
       "country_id": "$country_id",
-
-      "state_id": "$state_id",
+"area_id":area_id,
+      "area":area,
+      "district":district,
+      // "state_id": "$state_id",
       "city_id": "$city_id",
       "postal_code": postal_code,
       "phone": phone
@@ -116,15 +121,20 @@ class AddressRepository {
   Future<dynamic> getAddressUpdateLocationResponse(
     int? id,
     double? latitude,
-    double? longitude,
+    double? longitude, {String? city, String? country, String? suburb, String? road, String? area}
   ) async {
     var postBody = jsonEncode({
       "id": "$id",
       "user_id": "${user_id.$}",
       "latitude": "$latitude",
-      "longitude": "$longitude"
+      "longitude": "$longitude",
+      "country":country,
+      "city":city,
+      "area":area,
+      "district":suburb,
+      "street":road
     });
-
+print("lat${latitude}${longitude}");
     String url = ("${AppConfig.BASE_URL}/user/shipping/update-location");
     final response = await ApiRequest.post(
         url: url,
@@ -135,6 +145,7 @@ class AddressRepository {
         },
         body: postBody,
         middleware: BannedUser());
+    print("response${response.body}");
     return addressUpdateLocationResponseFromJson(response.body);
   }
 
@@ -175,25 +186,78 @@ class AddressRepository {
 
 
   Future<dynamic> getCityListByState({state_id = 0, name = ""}) async {
-    String url = ("${AppConfig.BASE_URL}/cities-by-state/$state_id?name=$name");
-    final response = await ApiRequest.get(url: url, middleware: BannedUser());
+    String url = ("${AppConfig.BASE_URL}/cities-by-country/$state_id?name=$name");
+    final response = await ApiRequest.get(url: url, middleware: BannedUser(),
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${access_token.$}",
+        "App-Language": app_language.$!,
+      },);
+    print("cities${response.body.toString()}");
+    print("url ${url}");
     return cityResponseFromJson(response.body);
   }
 
   Future<dynamic> getStateListByCountry({country_id = 0, name = ""}) async {
     String url =
         ("${AppConfig.BASE_URL}/states-by-country/$country_id?name=$name");
-    final response = await ApiRequest.get(url: url, middleware: BannedUser());
+    final response = await ApiRequest.get(url: url, middleware: BannedUser(), headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer ${access_token.$}",
+      "App-Language": app_language.$!,
+    },);
+    print("countries${response.body}");
     return myStateResponseFromJson(response.body);
   }
+  Future<dynamic> getAreaList({int city_id = 0, name = ""}) async {
+    String url =
+    ("${AppConfig.BASE_URL}/areas-by-city/$city_id?name=$name");
+    final response = await ApiRequest.get(url: url, middleware: BannedUser(), headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer ${access_token.$}",
+      "App-Language": app_language.$!,
+    },);
+    print("url ${url}");
+    print("area ${response.body}");
 
+    return areaResponseFromJson(response.body);
+  }
+  Future<dynamic> getDistrictList({int city_id = 0, name = ""}) async {
+    String url =
+    ("${AppConfig.BASE_URL}/district-by-city/$city_id?name=$name");
+    final response = await ApiRequest.get(url: url, middleware: BannedUser(), headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer ${access_token.$}",
+      "App-Language": app_language.$!,
+    },);
+    return myStateResponseFromJson(response.body);
+  }
   Future<dynamic> getCountryList({name = ""}) async {
     String url = ("${AppConfig.BASE_URL}/countries?name=$name");
-    final response = await ApiRequest.get(url: url, middleware: BannedUser());
-    print("qqqwwwwwwwww${name}");
-    return countryResponseFromJson(response.body);
+print("countries url ${url}");
+    final response = await ApiRequest.get(
+      url: url,
+      middleware: BannedUser(),
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${access_token.$}",
+        "App-Language": app_language.$!,
+      },
+    );
 
+    final data = countryResponseFromJson(response.body);
+    print("data ${data.countries}");
+
+    // ✅ Put Saudi Arabia first
+    data.countries!.sort((a, b) {
+      if (a.name!.toLowerCase().contains('saudi')) return -1;
+      if (b.name!.toLowerCase().contains('saudi')) return 1;
+      return a.name!.compareTo(b.name!);
+    });
+print("data ${data.countries!.length}");
+    return data;
   }
+
 
   Future<dynamic> getShippingCostResponse({shipping_type = ""}) async {
     // var post_body = jsonEncode({"seller_list": shipping_type});
@@ -221,7 +285,8 @@ class AddressRepository {
   }
 
   Future<dynamic> getAddressUpdateInCartResponse(
-      {int? address_id = 0, int pickup_point_id = 0}) async {
+      {int? address_id = 0, int pickup_point_id = 0}) async
+  {
     var postBody = jsonEncode({
       "address_id": "$address_id",
       "pickup_point_id": "$pickup_point_id",

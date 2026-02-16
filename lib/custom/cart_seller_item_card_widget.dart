@@ -1,3 +1,4 @@
+import 'package:active_ecommerce_cms_demo_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:active_ecommerce_cms_demo_app/helpers/system_config.dart';
 import 'package:active_ecommerce_cms_demo_app/my_theme.dart';
@@ -84,12 +85,12 @@ class CartSellerItemCardWidget extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 23.0),
                       child: Row(
                         children: [
-                          Text(
-                            SystemConfig.systemCurrency != null
-                                ? cartItem.price!.replaceAll(
-                                SystemConfig.systemCurrency!.code!,
-                                SystemConfig.systemCurrency!.symbol!)
-                                : cartItem.price!,
+                          Text(keepNumbersOnly(SystemConfig.systemCurrency != null
+                              ? cartItem.price!.replaceAll(
+                              SystemConfig.systemCurrency!.code!,
+                              SystemConfig.systemCurrency!.symbol!)
+                              : cartItem.price!,),
+
                             textAlign: TextAlign.left,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 2,
@@ -98,6 +99,8 @@ class CartSellerItemCardWidget extends StatelessWidget {
                                 fontSize: 16,
                                 fontWeight: FontWeight.w700),
                           ),
+                          Image.asset("assets/ryial.jpg",width: 12,height: 12,)
+
                         ],
                       ),
                     ),

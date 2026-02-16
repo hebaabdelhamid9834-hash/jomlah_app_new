@@ -82,7 +82,7 @@ class HomeAllProducts2 extends StatelessWidget {
             slug: product.slug,
             image: product.thumbnail_image,
             name: product.name,
-            main_price: product.main_price,
+            main_price: product.main_price??'',
             stroked_price: product.stroked_price,
             has_discount: product.has_discount,
             discount: product.discount,

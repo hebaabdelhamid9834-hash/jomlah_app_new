@@ -144,6 +144,7 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Are you sure to request cancellation ?",
         ),
+    "area_ucf": MessageLookupByLibrary.simpleMessage("Area"),
     "ask_for_refund_ucf": MessageLookupByLibrary.simpleMessage(
       "Ask For Refund",
     ),
@@ -340,6 +341,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "congratulations_ucf": MessageLookupByLibrary.simpleMessage(
       "Congratulations !!",
     ),
+    "contact_ucf": MessageLookupByLibrary.simpleMessage("Contact us"),
     "continue_to_delivery_info_ucf": MessageLookupByLibrary.simpleMessage(
       "Continue to Delivery Info",
     ),
@@ -431,6 +433,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Discount Date Range",
     ),
     "discount_ucf": MessageLookupByLibrary.simpleMessage("Discount"),
+    "district_ucf": MessageLookupByLibrary.simpleMessage("District"),
     "do_you_want_close_the_app": MessageLookupByLibrary.simpleMessage(
       "Do you want close the app?",
     ),
@@ -458,6 +461,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ended_ucf": MessageLookupByLibrary.simpleMessage("Ended"),
     "enter_address_ucf": MessageLookupByLibrary.simpleMessage("Enter Address"),
     "enter_amount_ucf": MessageLookupByLibrary.simpleMessage("Enter Amount"),
+    "enter_area_ucf": MessageLookupByLibrary.simpleMessage("Enter area"),
     "enter_city_ucf": MessageLookupByLibrary.simpleMessage("Enter City"),
     "enter_correct_email": MessageLookupByLibrary.simpleMessage(
       "Enter Correct Email",
@@ -465,6 +469,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_country_ucf": MessageLookupByLibrary.simpleMessage("Enter Country"),
     "enter_coupon_code": MessageLookupByLibrary.simpleMessage(
       "Enter coupon code",
+    ),
+    "enter_district_ucf": MessageLookupByLibrary.simpleMessage(
+      "Enter district",
     ),
     "enter_email": MessageLookupByLibrary.simpleMessage("Enter email"),
     "enter_message_ucf": MessageLookupByLibrary.simpleMessage("Enter Message"),
@@ -481,6 +488,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "enter_reason_ucf": MessageLookupByLibrary.simpleMessage("Enter Reason"),
     "enter_state_ucf": MessageLookupByLibrary.simpleMessage("Enter State"),
+    "enter_streetName_ucf": MessageLookupByLibrary.simpleMessage(
+      "Enter street name",
+    ),
     "enter_the_code": MessageLookupByLibrary.simpleMessage("Enter the code"),
     "enter_the_code_sent": MessageLookupByLibrary.simpleMessage(
       "Enter the code sent",
@@ -613,6 +623,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "join_ucf": MessageLookupByLibrary.simpleMessage("Join"),
     "language_ucf": MessageLookupByLibrary.simpleMessage("Language"),
+    "largest": MessageLookupByLibrary.simpleMessage("Largest"),
     "last_recharged": MessageLookupByLibrary.simpleMessage("Last recharged"),
     "last_view_product_ucf": MessageLookupByLibrary.simpleMessage(
       "Last View Product",
@@ -624,6 +635,7 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "less": MessageLookupByLibrary.simpleMessage("Less"),
     "load_more_ucf": MessageLookupByLibrary.simpleMessage("Load More"),
+    "loading_area_ucf": MessageLookupByLibrary.simpleMessage("Loading area..."),
     "loading_cities_ucf": MessageLookupByLibrary.simpleMessage(
       "Loading Cities ...",
     ),
@@ -632,6 +644,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "loading_coupons_ucf": MessageLookupByLibrary.simpleMessage(
       "Loading Coupons ...",
+    ),
+    "loading_district_ucf": MessageLookupByLibrary.simpleMessage(
+      "Loading district...",
     ),
     "loading_more_brands_ucf": MessageLookupByLibrary.simpleMessage(
       "Loading More Brands ...",
@@ -767,6 +782,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "New Arrivals Products",
     ),
     "new_password_ucf": MessageLookupByLibrary.simpleMessage("New Password"),
+    "newest": MessageLookupByLibrary.simpleMessage("Newest"),
     "no_address_is_added": MessageLookupByLibrary.simpleMessage(
       "No Addresses is added",
     ),
@@ -813,6 +829,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_item_ordered": MessageLookupByLibrary.simpleMessage(
       "No items are ordered",
     ),
+    "no_items": MessageLookupByLibrary.simpleMessage("no items found"),
     "no_language_is_added": MessageLookupByLibrary.simpleMessage(
       "No language is Added",
     ),
@@ -898,9 +915,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "offline_ucf": MessageLookupByLibrary.simpleMessage("Offline"),
     "ok": MessageLookupByLibrary.simpleMessage("OK"),
+    "oldest": MessageLookupByLibrary.simpleMessage("Oldest"),
     "on_auction_products_ucf": MessageLookupByLibrary.simpleMessage(
       "On Auction Products",
     ),
+    "on_the_way2_ucf": MessageLookupByLibrary.simpleMessage("On the way"),
     "on_the_way_ucf": MessageLookupByLibrary.simpleMessage("On The Way"),
     "only_image_file_allowed": MessageLookupByLibrary.simpleMessage(
       "only image file allowed",
@@ -924,6 +943,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "or_send_code_via_phone_number": MessageLookupByLibrary.simpleMessage(
       "or, send code via phone number",
+    ),
+    "order_Re_payment": MessageLookupByLibrary.simpleMessage(
+      "Order Re Payment",
     ),
     "order_code_ucf": MessageLookupByLibrary.simpleMessage("Order Code"),
     "order_date_ucf": MessageLookupByLibrary.simpleMessage("Order Date"),
@@ -1072,6 +1094,9 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Please log in to see the wishlist items",
         ),
+    "please_select_a_city_first": MessageLookupByLibrary.simpleMessage(
+      "Please select a city first",
+    ),
     "please_select_minimum_1_product_ucf": MessageLookupByLibrary.simpleMessage(
       "Please Select Minimum 1 Product",
     ),
@@ -1244,6 +1269,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Select a state first",
     ),
     "select_all": MessageLookupByLibrary.simpleMessage("Select All"),
+    "select_area_ucf": MessageLookupByLibrary.simpleMessage("Select area"),
+    "select_district_ucf": MessageLookupByLibrary.simpleMessage(
+      "Select district",
+    ),
     "select_payment_option_ucf": MessageLookupByLibrary.simpleMessage(
       "Select Payment Option",
     ),
@@ -1344,6 +1373,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sign_up_ucf": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "sku_all_capital": MessageLookupByLibrary.simpleMessage("SKU"),
     "slug_ucf": MessageLookupByLibrary.simpleMessage("Slug"),
+    "smallest": MessageLookupByLibrary.simpleMessage("Smallest"),
     "social_media_link": MessageLookupByLibrary.simpleMessage(
       "Social media link",
     ),
@@ -1362,6 +1392,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "store_home_ucf": MessageLookupByLibrary.simpleMessage("Store Home"),
     "store_to_get": MessageLookupByLibrary.simpleMessage("Store to get"),
+    "street_name_ucf": MessageLookupByLibrary.simpleMessage("Street name"),
     "sub_total": MessageLookupByLibrary.simpleMessage("Sub Total"),
     "sub_total_all_capital": MessageLookupByLibrary.simpleMessage("SUB TOTAL"),
     "subject_ucf": MessageLookupByLibrary.simpleMessage("Subject"),
@@ -1403,6 +1434,9 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "To add or edit addresses, Go to address page",
         ),
+    "to_set_your_profile_picture": MessageLookupByLibrary.simpleMessage(
+      "To set your profile picture, this app needs to collect your image from the gallery.",
+    ),
     "today_ucf": MessageLookupByLibrary.simpleMessage("Today"),
     "todays_deal_ucf": MessageLookupByLibrary.simpleMessage("Todays Deal"),
     "top_categories_ucf": MessageLookupByLibrary.simpleMessage(

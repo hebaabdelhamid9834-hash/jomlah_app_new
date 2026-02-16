@@ -85,6 +85,9 @@ dev_dependencies:
   intl_utils: ^2.8.13
   json_serializable: ^6.2.0
   flutter_svg:
+  flutter_map: ^6.1.0
+  latlong2: ^0.9.0
+  http:
   
 
 flutter_launcher_icons:

@@ -768,7 +768,32 @@
   "sign_in_with_apple": "Sign in with Apple",
   "app_name_splash_ucf": "Jomlah.com",
   "choose_language_ucf": "Choose Language",
-  "ryial_ucf":"Ryial"
+  "ryial_ucf":"Ryial",
+      "on_the_way2_ucf": "On the way",
+      "district_ucf": "District",
+      "enter_district_ucf": "Enter district",
+      "loading_district_ucf": "Loading district...",
+      "select_district_ucf":"Select district",
+      "area_ucf":"Area",
+        "enter_area_ucf":"Enter area",
+        "loading_area_ucf":"Loading area...",
+        "select_area_ucf":"Select area",
+        "enter_streetName_ucf":"Enter street name",
+        "street_name_ucf":"Street name",
+        "order_Re_payment":"Order Re Payment",
+        "contact_ucf":"Contact us",
+        "no_items":"no items found",
+        "please_select_a_city_first":"Please select a city first",
+        "newest":"Newest",
+        "oldest":"Oldest",
+        "smallest":"Smallest",
+        "largest":"Largest",
+        "to_set_your_profile_picture":"To set your profile picture, this app needs to collect your image from the gallery.",
+"permission_denied_to_access_photos.":"Permission denied to access photos."
+
+
+
+
 
 
 

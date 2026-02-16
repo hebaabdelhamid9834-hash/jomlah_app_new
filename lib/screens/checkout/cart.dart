@@ -5,6 +5,7 @@ import 'package:active_ecommerce_cms_demo_app/helpers/shared_value_helper.dart';
 import 'package:active_ecommerce_cms_demo_app/helpers/shimmer_helper.dart';
 import 'package:active_ecommerce_cms_demo_app/helpers/system_config.dart';
 import 'package:active_ecommerce_cms_demo_app/l10n/l10n.dart';
+import 'package:active_ecommerce_cms_demo_app/main.dart';
 import 'package:active_ecommerce_cms_demo_app/my_theme.dart';
 import 'package:active_ecommerce_cms_demo_app/presenter/cart_counter.dart';
 import 'package:flutter/material.dart';
@@ -123,13 +124,20 @@ class _CartState extends State<Cart> {
                   const Spacer(),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Text(
-                      cartProvider.cartTotalString,
-                      style: const TextStyle(
-                        color: MyTheme.accent_color,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                      ),
+                    child: Row(
+                      children: [
+                        Text(keepNumbersOnly(
+                      cartProvider.cartTotalString
+                    ),
+                          style: const TextStyle(
+                            color: MyTheme.accent_color,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Image.asset("assets/ryial.jpg",width: 12,height: 12,)
+
+                      ],
                     ),
                   ),
                 ],
@@ -197,7 +205,7 @@ class _CartState extends State<Cart> {
       return ListView.separated(
         separatorBuilder: (context, index) => const SizedBox(height: 26),
         itemCount: cartProvider.shopList.length,
-        physics: const NeverScrollableScrollPhysics(),
+        physics:  NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemBuilder: (context, index) {
           return Column(
@@ -216,17 +224,22 @@ class _CartState extends State<Cart> {
                       ),
                     ),
                     const Spacer(),
-                    Text(
-                      cartProvider.shopList[index].subTotal.replaceAll(
-                            SystemConfig.systemCurrency!.code,
-                            SystemConfig.systemCurrency!.symbol,
-                          ) ??
-                          '',
-                      style: const TextStyle(
-                        color: MyTheme.accent_color,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
-                      ),
+                    Row(
+                      children: [
+                        Text(keepNumbersOnly(cartProvider.shopList[index].subTotal.replaceAll(
+                          SystemConfig.systemCurrency?.code??'',
+                          SystemConfig.systemCurrency?.symbol??"",
+                        ) ??
+                            ''),
+                          style: const TextStyle(
+                            color: MyTheme.accent_color,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                          ),
+                        ),
+                        Image.asset("assets/ryial.jpg",width: 12,height: 12,)
+
+                      ],
                     ),
                   ],
                 ),

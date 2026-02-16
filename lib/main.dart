@@ -52,6 +52,9 @@ import 'package:go_router/go_router.dart';
 import 'package:one_context/one_context.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_value/shared_value.dart';
+String keepNumbersOnly(String input) {
+  return input.replaceAll(RegExp(r'[^0-9]'), '');
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

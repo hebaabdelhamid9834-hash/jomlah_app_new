@@ -23,6 +23,7 @@ class HomeCarouselSlider extends StatelessWidget {
       );
     } else if (homeData!.carouselImageList.isNotEmpty) {
       print("slider ${homeData!.carouselImageList.length}");
+
       return Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -50,12 +51,14 @@ class HomeCarouselSlider extends StatelessWidget {
             scrollDirection: Axis.horizontal,
           ),
           items: homeData?.carouselImageList.map((i) {
+            print("slider ${i.photo}");
+
             return Builder(
               key: UniqueKey(), // Ensure each item has a unique key
               builder: (BuildContext context) {
                 print("Image URL =====> ${i.photo}");
 
-                final String fullUrl = (i.photo ?? "").startsWith("http") ? i.photo! : "${AppConfig.BASE_URL}${i.photo}";
+                // final String fullUrl = (i.photo ?? "").startsWith("http") ? i.photo! : "${AppConfig.BASE_URL}${i.photo}";
 
                 return SizedBox(
                   width: double.infinity,
@@ -67,7 +70,7 @@ class HomeCarouselSlider extends StatelessWidget {
                       GoRouter.of(context).go(url);
                     },
                     child: Image.network(
-                      'https://jomlah.com/public/assets/img/placeholder.jpg',
+                     i.photo?? 'https://jomlah.com/public/assets/img/placeholder.jpg',
                       fit: BoxFit.cover,
                       errorBuilder: (context, error, stackTrace) {
                         return Center(

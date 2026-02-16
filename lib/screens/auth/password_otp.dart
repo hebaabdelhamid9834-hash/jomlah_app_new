@@ -285,7 +285,8 @@ class _PasswordOtpState extends State<PasswordOtp> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 40.0),
-                    child: Container(
+                    child:
+                    Container(
                       height: 45,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -322,20 +323,42 @@ class _PasswordOtpState extends State<PasswordOtp> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 50),
+              padding: const EdgeInsets.only(top: 50,right: 70,left: 70),
               child: InkWell(
                 onTap: () {
                   onTapResend();
                 },
-                child: Text(
-                  AppLocalizations.of(context).resend_code_ucf,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: MyTheme.accent_color,
-                    decoration: TextDecoration.underline,
-                    fontSize: 13,
+                child:
+                Container(
+                  height: 45,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: MyTheme.textfield_grey,
+                      width: 1,
+                    ),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(12.0),
+                    ),
+                  ),
+                  child: Btn.basic(
+                    minWidth: MediaQuery.of(context).size.width,
+                    color: MyTheme.amber,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(12.0),
+                      ),
+                    ),
+                    child:  Text(
+                      AppLocalizations.of(context).resend_code_ucf,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: MyTheme.accent_color,
+                        fontSize: 13,
+                      ),
+                    ),
                   ),
                 ),
+
               ),
             ),
           ],

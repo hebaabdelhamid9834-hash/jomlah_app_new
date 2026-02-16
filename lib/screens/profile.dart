@@ -2747,6 +2747,7 @@ import 'package:active_ecommerce_cms_demo_app/screens/chat/messenger_list.dart';
 import 'package:active_ecommerce_cms_demo_app/screens/classified_ads/classified_ads.dart';
 import 'package:active_ecommerce_cms_demo_app/screens/classified_ads/my_classified_ads.dart';
 import 'package:active_ecommerce_cms_demo_app/screens/club_point.dart';
+import 'package:active_ecommerce_cms_demo_app/screens/contact_us.dart';
 import 'package:active_ecommerce_cms_demo_app/screens/coupon/coupons.dart';
 import 'package:active_ecommerce_cms_demo_app/screens/currency_change.dart';
 import 'package:active_ecommerce_cms_demo_app/screens/digital_product/digital_products.dart';
@@ -3423,6 +3424,38 @@ class _ProfileState extends State<Profile> {
                   },
                 ),
                 Divider(thickness: 1, color: MyTheme.light_grey),
+                SizedBox(
+                  height: 40,
+                  child: TextButton(
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ContactUsPage()));
+                    },
+                    style: TextButton.styleFrom(
+                      splashFactory: NoSplash.splashFactory,
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(right: 24.0),
+                          child: Icon(Icons.phone,
+                            color:MyTheme.dark_font_grey,
+                          )
+                        ),
+                        Text(
+                          AppLocalizations.of(context).contact_ucf
+                          ,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color:MyTheme.dark_font_grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
         ],
@@ -3960,7 +3993,7 @@ class _ProfileState extends State<Profile> {
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
-                          child: Text(LangText(context).local.cancel_ucf),
+                          child: Text(LangText(context).local.no_ucf),
                         ),
                         TextButton(
                           onPressed: () {

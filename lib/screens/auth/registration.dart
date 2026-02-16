@@ -42,7 +42,8 @@ class _RegistrationState extends State<Registration> {
   String initialCountry = 'US';
 
   var countries_code = <String?>[];
-
+  bool _obscurePassword = true;
+  bool _obscureConfirmPassword = true;
   String? _phone = "";
   bool? _isAgree = false;
   bool _isCaptchaShowing = false;
@@ -69,7 +70,13 @@ class _RegistrationState extends State<Registration> {
 
   fetch_country() async {
     var data = await AddressRepository().getCountryList();
-    data.countries.forEach((c) => countries_code.add(c.code));
+    countries_code.add("SA");
+    for (var c in data.countries) {
+      if (c.code != "SA") {
+        countries_code.add(c.code);
+      }
+    }
+    setState(() {});
   }
 
   @override
@@ -321,6 +328,7 @@ class _RegistrationState extends State<Registration> {
                       SizedBox(
                         height: 36,
                         child: CustomInternationalPhoneNumberInput(
+                          locale: "ar",
                           searchBoxDecoration: InputDecoration(
                             hintText:AppLocalizations.of(
                               context,
@@ -407,13 +415,25 @@ class _RegistrationState extends State<Registration> {
                       child: TextField(
                         controller: _passwordController,
                         autofocus: false,
-                        obscureText: true,
+                        obscureText: _obscurePassword,
                         enableSuggestions: false,
                         autocorrect: false,
                         decoration: InputDecorations.buildInputDecoration_1(
                           hint_text: "• • • • • • • •",
+                        ).copyWith(
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              _obscurePassword ? Icons.visibility_off : Icons.visibility,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                _obscurePassword = !_obscurePassword;
+                              });
+                            },
+                          ),
                         ),
                       ),
+
                     ),
                     Text(
                       AppLocalizations.of(
@@ -442,16 +462,30 @@ class _RegistrationState extends State<Registration> {
                 padding: const EdgeInsets.only(bottom: 8.0),
                 child: SizedBox(
                   height: 36,
-                  child: TextField(
+                  child:TextField(
                     controller: _passwordConfirmController,
                     autofocus: false,
-                    obscureText: true,
+                    obscureText: _obscureConfirmPassword,
                     enableSuggestions: false,
                     autocorrect: false,
                     decoration: InputDecorations.buildInputDecoration_1(
                       hint_text: "• • • • • • • •",
+                    ).copyWith(
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          _obscureConfirmPassword
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _obscureConfirmPassword = !_obscureConfirmPassword;
+                          });
+                        },
+                      ),
                     ),
                   ),
+
                 ),
               ),
               if (google_recaptcha.$)
