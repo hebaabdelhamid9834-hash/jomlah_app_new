@@ -13,6 +13,7 @@ import 'package:active_ecommerce_cms_demo_app/helpers/shared_value_helper.dart';
 import 'package:active_ecommerce_cms_demo_app/helpers/shimmer_helper.dart';
 import 'package:active_ecommerce_cms_demo_app/helpers/system_config.dart';
 import 'package:active_ecommerce_cms_demo_app/l10n/l10n.dart';
+import 'package:active_ecommerce_cms_demo_app/main.dart';
 import 'package:active_ecommerce_cms_demo_app/my_theme.dart';
 import 'package:active_ecommerce_cms_demo_app/repositories/address_repository.dart';
 import 'package:active_ecommerce_cms_demo_app/repositories/shipping_repository.dart';
@@ -255,9 +256,19 @@ class _ShippingInfoState extends State<ShippingInfo> {
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
-      title: Text(
-        "${AppLocalizations.of(context).shipping_cost_ucf} $_shipping_cost_string",
-        style: TextStyle(fontSize: 16, color: MyTheme.accent_color),
+      title: Row(
+        children: [
+          Text(
+            "${AppLocalizations.of(context).shipping_cost_ucf} ",
+            style: TextStyle(fontSize: 16, color: MyTheme.accent_color),
+          ),
+          Text(
+           keepNumbersOnly(" $_shipping_cost_string") ,
+            style: TextStyle(fontSize: 16, color: MyTheme.accent_color),
+          ),
+          Image.asset("assets/ryial.jpg",width: 12,height: 12,)
+
+        ],
       ),
       elevation: 0.0,
       titleSpacing: 0,
@@ -571,9 +582,21 @@ class _ShippingInfoState extends State<ShippingInfo> {
   Container buildAppbarTitle(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width - 40,
-      child: Text(
-        "${AppLocalizations.of(context).shipping_cost_ucf} ${SystemConfig.systemCurrency != null ? _shipping_cost_string!.replaceAll(SystemConfig.systemCurrency!.code!, SystemConfig.systemCurrency!.symbol!) : _shipping_cost_string}",
-        style: TextStyle(fontSize: 16, color: MyTheme.dark_font_grey, fontWeight: FontWeight.bold),
+      child: Row(
+        children: [
+          Text(
+            "${AppLocalizations.of(context).shipping_cost_ucf} ",
+            style: TextStyle(fontSize: 16, color: MyTheme.dark_font_grey, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            " ${SystemConfig.systemCurrency != null ?
+           keepNumbersOnly( _shipping_cost_string!.replaceAll(SystemConfig.systemCurrency!.code!,
+                SystemConfig.systemCurrency!.symbol!)) :keepNumbersOnly( "$_shipping_cost_string")}",
+            style: TextStyle(fontSize: 16, color: MyTheme.dark_font_grey, fontWeight: FontWeight.bold),
+          ),
+          Image.asset("assets/ryial.jpg",width: 12,height: 12,)
+
+        ],
       ),
     );
   }
@@ -694,6 +717,8 @@ class _ShippingInfoState extends State<ShippingInfo> {
         // width: (mWidth / 4) - 1,
         alignment: Alignment.center,
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Radio(
                 materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,

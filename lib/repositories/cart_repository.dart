@@ -98,6 +98,7 @@ class CartRepository {
         },
         body: postBody,
         middleware: BannedUser());
+    print("response ${response.body}");
     return cartProcessResponseFromJson(response.body);
   }
 

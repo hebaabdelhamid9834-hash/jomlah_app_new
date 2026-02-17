@@ -6825,6 +6825,31 @@ class AppLocalizations {
   String get address2_ucf {
     return Intl.message('Address', name: 'address2_ucf', desc: '', args: []);
   }
+
+  /// `Warning`
+  String get warning {
+    return Intl.message('Warning', name: 'warning', desc: '', args: []);
+  }
+
+  /// `Your cart contains items from more than one seller. Do you want to continue`
+  String get your_cart_contains_items_from_more {
+    return Intl.message(
+      'Your cart contains items from more than one seller. Do you want to continue',
+      name: 'your_cart_contains_items_from_more',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have products from more than one trader.\nThe delivery fees will increase because the order will be shipped from multiple sources.`
+  String get trader {
+    return Intl.message(
+      'You have products from more than one trader.\nThe delivery fees will increase because the order will be shipped from multiple sources.',
+      name: 'trader',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

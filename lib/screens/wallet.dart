@@ -6,6 +6,7 @@ import 'package:active_ecommerce_cms_demo_app/custom/useful_elements.dart';
 import 'package:active_ecommerce_cms_demo_app/helpers/reg_ex_inpur_formatter.dart';
 import 'package:active_ecommerce_cms_demo_app/helpers/shared_value_helper.dart';
 import 'package:active_ecommerce_cms_demo_app/helpers/shimmer_helper.dart';
+import 'package:active_ecommerce_cms_demo_app/main.dart';
 import 'package:active_ecommerce_cms_demo_app/my_theme.dart';
 import 'package:active_ecommerce_cms_demo_app/repositories/wallet_repository.dart';
 import 'package:active_ecommerce_cms_demo_app/screens/checkout/checkout.dart';
@@ -429,13 +430,18 @@ class _WalletState extends State<Wallet> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 6.0),
-                child: Text(
-                  convertPrice(_balanceDetails.balance),
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(keepNumbersOnly(_balanceDetails.balance),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Image.asset("assets/ryial.jpg",width: 12,height: 12,)
+                  ],
                 ),
               ),
               Spacer(),

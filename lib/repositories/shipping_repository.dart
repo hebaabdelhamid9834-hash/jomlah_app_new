@@ -69,7 +69,7 @@ class ShippingRepository {
         "App-Language": app_language.$!,
       },
     );
-
+print("url ${url}");
     print("Shipping Response Body: ${response.body}");
 
     return deliveryInfoResponseFromJson(response.body);

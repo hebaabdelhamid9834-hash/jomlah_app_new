@@ -28,9 +28,31 @@ class Cart extends StatefulWidget {
   @override
   _CartState createState() => _CartState();
 }
-
 class _CartState extends State<Cart> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  Future<bool> _showMultiTraderWarning(int tradersCount) async {
+    print("muli vendor");
+    return await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title:  Text(AppLocalizations.of(context).warning_ucf,style: TextStyle(color:Colors.amber),),
+        content: Text(AppLocalizations.of(context).trader,
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child:  Text(AppLocalizations.of(context).cancel_ucf),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(context, true),
+
+            child:  Text(AppLocalizations.of(context).continue_ucf),
+          ),
+        ],
+      ),
+    ) ??
+        false;
+  }
 
   @override
   void initState() {
@@ -127,8 +149,7 @@ class _CartState extends State<Cart> {
                     child: Row(
                       children: [
                         Text(keepNumbersOnly(
-                      cartProvider.cartTotalString
-                    ),
+                          cartProvider.cartTotalString),
                           style: const TextStyle(
                             color: MyTheme.accent_color,
                             fontSize: 14,
@@ -169,7 +190,18 @@ class _CartState extends State<Cart> {
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                      onPressed: canProceed ? () => cartProvider.onPressProceedToShipping(context) : null,
+                      onPressed:  canProceed
+                          ? () async {
+                        final tradersCount = cartProvider.uniqueTradersCount;
+
+                        if (tradersCount > 1) {
+                          final agreed = await _showMultiTraderWarning(tradersCount);
+                          if (!agreed) return;
+                        }
+
+                        cartProvider.onPressProceedToShipping(context);
+                      }
+                          : null,
                     ),
                   ),
                 ),
@@ -205,7 +237,7 @@ class _CartState extends State<Cart> {
       return ListView.separated(
         separatorBuilder: (context, index) => const SizedBox(height: 26),
         itemCount: cartProvider.shopList.length,
-        physics:  NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemBuilder: (context, index) {
           return Column(
@@ -226,11 +258,12 @@ class _CartState extends State<Cart> {
                     const Spacer(),
                     Row(
                       children: [
-                        Text(keepNumbersOnly(cartProvider.shopList[index].subTotal.replaceAll(
-                          SystemConfig.systemCurrency?.code??'',
-                          SystemConfig.systemCurrency?.symbol??"",
-                        ) ??
-                            ''),
+                        Text(keepNumbersOnly(
+                          cartProvider.shopList[index].subTotal.replaceAll(
+                            SystemConfig.systemCurrency!.code,
+                            SystemConfig.systemCurrency!.symbol,
+                          ) ??
+                              ''),
                           style: const TextStyle(
                             color: MyTheme.accent_color,
                             fontWeight: FontWeight.bold,
@@ -238,7 +271,6 @@ class _CartState extends State<Cart> {
                           ),
                         ),
                         Image.asset("assets/ryial.jpg",width: 12,height: 12,)
-
                       ],
                     ),
                   ],

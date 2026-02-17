@@ -790,7 +790,11 @@
         "largest":"Largest",
         "to_set_your_profile_picture":"To set your profile picture, this app needs to collect your image from the gallery.",
 "permission_denied_to_access_photos.":"Permission denied to access photos.",
-"address2_ucf":"Address"
+"address2_ucf":"Address",
+"warning":"Warning",
+"your_cart_contains_items_from_more":"Your cart contains items from more than one seller. Do you want to continue",
+"trader": "You have products from more than one trader.\nThe delivery fees will increase because the order will be shipped from multiple sources."
+
 
 
 

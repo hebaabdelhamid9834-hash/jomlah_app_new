@@ -302,7 +302,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "continue_to_delivery_info_ucf": MessageLookupByLibrary.simpleMessage(
       "تابع إلى معلومات التسليم",
     ),
-    "continue_ucf": MessageLookupByLibrary.simpleMessage("مكتمل"),
+    "continue_ucf": MessageLookupByLibrary.simpleMessage("متابعة"),
     "conversation_ucf": MessageLookupByLibrary.simpleMessage("محادثة"),
     "convert_now_ucf": MessageLookupByLibrary.simpleMessage("تحويل الآن"),
     "converted_ucf": MessageLookupByLibrary.simpleMessage("محولة"),
@@ -1079,6 +1079,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "search_in_active_ecommerce_cms": MessageLookupByLibrary.simpleMessage(
       "ابحث عن أي شيء ...",
     ),
+    "search_product_here": MessageLookupByLibrary.simpleMessage(
+      "ابحث عن المنتجات هنا...",
+    ),
     "search_products_from": MessageLookupByLibrary.simpleMessage(
       "ابحث عن منتجات من",
     ),
@@ -1261,6 +1264,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "total_orders_ucf": MessageLookupByLibrary.simpleMessage("إجمالي الطلبات"),
     "total_price_ucf": MessageLookupByLibrary.simpleMessage("السعر الكلي"),
     "total_sales_ucf": MessageLookupByLibrary.simpleMessage("إجمالي المبيعات"),
+    "trader": MessageLookupByLibrary.simpleMessage(
+      "لديك منتجات من أكثر من تاجر.\nسيتم زيادة رسوم الشحن لأن الطلب سيتم شحنه من أكثر من مصدر.",
+    ),
     "transaction_id_ucf": MessageLookupByLibrary.simpleMessage("رقم التحويلة"),
     "twitter_ucf": MessageLookupByLibrary.simpleMessage("تويتر"),
     "type_and_hit_enter_to_add_a_tag_ucf": MessageLookupByLibrary.simpleMessage(
@@ -1345,6 +1351,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "سجل إعادة شحن المحفظة",
     ),
     "wallet_ucf": MessageLookupByLibrary.simpleMessage("محفظة"),
+    "warning": MessageLookupByLibrary.simpleMessage("انتبه"),
     "warning_ucf": MessageLookupByLibrary.simpleMessage("تحذير!"),
     "we_will_send_you_a_OTP_code_if_the_mail_id_is_correct_ucf":
         MessageLookupByLibrary.simpleMessage(
@@ -1386,6 +1393,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "لم يتم التحقق من حسابك",
     ),
     "your_app_is_now": MessageLookupByLibrary.simpleMessage("تطبيقك الآن"),
+    "your_cart_contains_items_from_more": MessageLookupByLibrary.simpleMessage(
+      "يحتوي سلة التسوق على منتجات من أكثر من بائع. هل تريد المتابعة؟",
+    ),
     "your_categories_ucf": MessageLookupByLibrary.simpleMessage("فئاتك"),
     "your_delivery_location": MessageLookupByLibrary.simpleMessage(
       "موقع التسليم الخاص بك. . .",

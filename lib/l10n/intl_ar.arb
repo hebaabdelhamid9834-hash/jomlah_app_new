@@ -134,7 +134,7 @@
   "follow_ucf": "متابعة",
   "followed_ucf": "تمت المتابعة",
   "unfollow_ucf": "إلغاء متابعة هذا البائع",
-  "continue_ucf": "مكتمل",
+  "continue_ucf": "متابعة",
   "day_ucf": "يوم",
   "days_ucf": "أيام",
   "network_error": "هناك شئ غير صحيح. خطأ في الشبكة",
@@ -715,7 +715,14 @@
 "largest": "الأكبر",
 "to_set_your_profile_picture": "لتعيين صورة ملفك الشخصي، يحتاج هذا التطبيق إلى الوصول إلى صورتك من المعرض.",
 "permission_denied_to_access_photos": "تم رفض الإذن للوصول إلى الصور",
-"address2_ucf":"العنوان"
+"address2_ucf":"العنوان",
+"warning":"انتبه",
+"trader": "لديك منتجات من أكثر من تاجر.\nسيتم زيادة رسوم الشحن لأن الطلب سيتم شحنه من أكثر من مصدر.",
+"search_product_here": "ابحث عن المنتجات هنا...",
+"your_cart_contains_items_from_more":
+"يحتوي سلة التسوق على منتجات من أكثر من بائع. هل تريد المتابعة؟"
+
+
 
 
 }

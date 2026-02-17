@@ -323,18 +323,19 @@ class CartProvider extends ChangeNotifier {
 
   void getSetCartTotal() {
     _cartTotalString = _shopResponse!.grandTotal!.replaceAll(
-      SystemConfig.systemCurrency?.code??'',
-      SystemConfig.systemCurrency?.symbol??"",
+      SystemConfig.systemCurrency!.code!,
+      SystemConfig.systemCurrency!.symbol!,
     );
 
     notifyListeners();
   }
 
   void onQuantityIncrease(
-    BuildContext context,
-    int sellerIndex,
-    int itemIndex,
-  ) {
+      BuildContext context,
+      int sellerIndex,
+      int itemIndex,
+      )
+  {
     if (_shopList[sellerIndex].cartItems[itemIndex].quantity < _shopList[sellerIndex].cartItems[itemIndex].upperLimit) {
       _shopList[sellerIndex].cartItems[itemIndex].quantity++;
       notifyListeners();
@@ -349,10 +350,11 @@ class CartProvider extends ChangeNotifier {
   }
 
   void onQuantityDecrease(
-    BuildContext context,
-    int sellerIndex,
-    int itemIndex,
-  ) {
+      BuildContext context,
+      int sellerIndex,
+      int itemIndex,
+      )
+  {
     if (_shopList[sellerIndex].cartItems[itemIndex].quantity > _shopList[sellerIndex].cartItems[itemIndex].lowerLimit) {
       _shopList[sellerIndex].cartItems[itemIndex].quantity--;
       notifyListeners();
@@ -456,7 +458,7 @@ class CartProvider extends ChangeNotifier {
 
     var cartIdsString = cartIds.join(',').toString();
     var cartQuantitiesString = cartQuantities.join(',').toString();
-
+    print("cart ids ${cartIdsString}");
     var cartProcessResponse = await CartRepository().getCartProcessResponse(
       cartIdsString,
       cartQuantitiesString,
@@ -507,4 +509,28 @@ class CartProvider extends ChangeNotifier {
     reset();
     fetchData(context);
   }
+  int get uniqueTradersCount {
+    final Set<int> traders = {};
+
+    if (_shopList.isNotEmpty) {
+      for (var shop in _shopList) {
+        // First level (Datum.ownerId)
+        if (shop.ownerId != null) {
+          traders.add(shop.ownerId);
+        }
+
+        // Safety: item level (CartItem.ownerId)
+        if (shop.cartItems != null && shop.cartItems.isNotEmpty) {
+          for (var item in shop.cartItems) {
+            if (item.ownerId != null) {
+              traders.add(item.ownerId!);
+            }
+          }
+        }
+      }
+    }
+
+    return traders.length;
+  }
+
 }

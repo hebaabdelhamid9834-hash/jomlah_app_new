@@ -1461,6 +1461,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "total_orders_ucf": MessageLookupByLibrary.simpleMessage("Total Orders"),
     "total_price_ucf": MessageLookupByLibrary.simpleMessage("Total Price  :"),
     "total_sales_ucf": MessageLookupByLibrary.simpleMessage("Total Sales"),
+    "trader": MessageLookupByLibrary.simpleMessage(
+      "You have products from more than one trader.\nThe delivery fees will increase because the order will be shipped from multiple sources.",
+    ),
     "transaction_id_ucf": MessageLookupByLibrary.simpleMessage(
       "Transaction Id",
     ),
@@ -1562,6 +1565,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Wallet Recharge History",
     ),
     "wallet_ucf": MessageLookupByLibrary.simpleMessage("Wallet"),
+    "warning": MessageLookupByLibrary.simpleMessage("Warning"),
     "warning_ucf": MessageLookupByLibrary.simpleMessage("Warning!"),
     "we_will_send_you_a_OTP_code_if_the_mail_id_is_correct_ucf":
         MessageLookupByLibrary.simpleMessage(
@@ -1609,6 +1613,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your account is unverified",
     ),
     "your_app_is_now": MessageLookupByLibrary.simpleMessage("Your app is now"),
+    "your_cart_contains_items_from_more": MessageLookupByLibrary.simpleMessage(
+      "Your cart contains items from more than one seller. Do you want to continue",
+    ),
     "your_categories_ucf": MessageLookupByLibrary.simpleMessage(
       "Your Categories",
     ),
