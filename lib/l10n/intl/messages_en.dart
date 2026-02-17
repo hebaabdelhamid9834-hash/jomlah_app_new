@@ -61,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Add Your Coupon Code",
     ),
     "added_to_cart": MessageLookupByLibrary.simpleMessage("Added to cart"),
+    "address2_ucf": MessageLookupByLibrary.simpleMessage("Address"),
     "address_required": MessageLookupByLibrary.simpleMessage(
       "Address  Required",
     ),

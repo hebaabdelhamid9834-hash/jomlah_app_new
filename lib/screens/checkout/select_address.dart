@@ -185,7 +185,7 @@ class _SelectAddressState extends State<SelectAddress> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              buildShippingInfoItemCountry(index, selectAddressProvider),
+               buildShippingInfoItemCountry(index, selectAddressProvider),
               buildShippingInfoItemCity(index, selectAddressProvider),
               buildShippingInfoItemArea(index,selectAddressProvider),
               buildShippingInfoItemDistrict(index,selectAddressProvider),
@@ -275,7 +275,7 @@ class _SelectAddressState extends State<SelectAddress> {
           Container(
             width: 200,
             child: Text(
-              selectAddressProvider.shippingAddressList[index].country_name,
+              selectAddressProvider.shippingAddressList[index].country_name??"",
               maxLines: 2,
               style: TextStyle(
                   color: MyTheme.dark_grey, fontWeight: FontWeight.w600),
@@ -361,7 +361,7 @@ class _SelectAddressState extends State<SelectAddress> {
           Container(
             width: 200,
             child: Text(
-              selectAddressProvider.shippingAddressList[index].city_name,
+              selectAddressProvider.shippingAddressList[index].city_name??'',
               maxLines: 2,
               style: TextStyle(
                   color: MyTheme.dark_grey, fontWeight: FontWeight.w600),
@@ -391,7 +391,7 @@ class _SelectAddressState extends State<SelectAddress> {
           Container(
             width: 175,
             child: Text(
-              selectAddressProvider.shippingAddressList[index].address,
+              selectAddressProvider.shippingAddressList[index].address??'',
               maxLines: 2,
               style: TextStyle(
                   color: MyTheme.dark_grey, fontWeight: FontWeight.w600),

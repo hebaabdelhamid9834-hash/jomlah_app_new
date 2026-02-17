@@ -6820,6 +6820,11 @@ class AppLocalizations {
   }
 
   // skipped getter for the 'permission_denied_to_access_photos.' key
+
+  /// `Address`
+  String get address2_ucf {
+    return Intl.message('Address', name: 'address2_ucf', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

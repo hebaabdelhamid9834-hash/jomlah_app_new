@@ -8,6 +8,7 @@ import 'package:active_ecommerce_cms_demo_app/data_model/shop_details_response.d
 import 'package:active_ecommerce_cms_demo_app/helpers/shared_value_helper.dart';
 import 'package:active_ecommerce_cms_demo_app/helpers/shimmer_helper.dart';
 import 'package:active_ecommerce_cms_demo_app/helpers/system_config.dart';
+import 'package:active_ecommerce_cms_demo_app/main.dart';
 import 'package:active_ecommerce_cms_demo_app/my_theme.dart';
 import 'package:active_ecommerce_cms_demo_app/repositories/product_repository.dart';
 import 'package:active_ecommerce_cms_demo_app/repositories/shop_repository.dart';
@@ -1085,45 +1086,55 @@ class _FeaturedProductCardState extends State<FeaturedProductCard> {
                       if (widget.has_discount)
                         Padding(
                           padding: EdgeInsets.fromLTRB(16, 8, 16, 0),
-                          child: Text(
-                            SystemConfig.systemCurrency != null
-                                ? widget.stroked_price?.replaceAll(
-                                      SystemConfig.systemCurrency!.code!,
-                                      SystemConfig.systemCurrency!.symbol!,
-                                    ) ??
-                                    ''
-                                : widget.stroked_price ?? '',
-                            textAlign: TextAlign.left,
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
-                            style: TextStyle(
-                              decoration: TextDecoration.lineThrough,
-                              color: MyTheme.medium_grey,
-                              fontSize: 12,
-                              fontWeight: FontWeight.normal,
-                            ),
+                          child: Row(
+                            children: [
+                              Text(keepNumbersOnly(
+                                SystemConfig.systemCurrency != null
+                                    ? widget.stroked_price?.replaceAll(
+                                          SystemConfig.systemCurrency!.code!,
+                                          SystemConfig.systemCurrency!.symbol!,
+                                        ) ??
+                                        ''
+                                    : widget.stroked_price ?? ''),
+                                textAlign: TextAlign.left,
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                                style: TextStyle(
+                                  decoration: TextDecoration.lineThrough,
+                                  color: MyTheme.medium_grey,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+                              Image.asset("assets/ryial.jpg",width: 12,height: 12,)
+                            ],
                           ),
                         )
                       else
                         SizedBox(height: 4.0),
                       Padding(
                         padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
-                        child: Text(
-                          SystemConfig.systemCurrency != null
-                              ? widget.main_price?.replaceAll(
-                                    SystemConfig.systemCurrency!.code!,
-                                    SystemConfig.systemCurrency!.symbol!,
-                                  ) ??
-                                  ''
-                              : widget.main_price ?? '',
-                          textAlign: TextAlign.left,
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                          ),
+                        child: Row(
+                          children: [
+                            Text(keepNumbersOnly(
+                              SystemConfig.systemCurrency != null
+                                  ? widget.main_price?.replaceAll(
+                                        SystemConfig.systemCurrency!.code!,
+                                        SystemConfig.systemCurrency!.symbol!,
+                                      ) ??
+                                      ''
+                                  : widget.main_price ?? ''),
+                              textAlign: TextAlign.left,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            Image.asset("assets/ryial.jpg",width: 12,height: 12,)
+                          ],
                         ),
                       ),
                     ],

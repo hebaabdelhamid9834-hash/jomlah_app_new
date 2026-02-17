@@ -100,7 +100,7 @@ class _SettingsState extends State<Settings> {
           Divider(thickness: 1, color: MyTheme.light_grey),
           buildBottomVerticalCardListItem(
             "assets/location.png",
-            AppLocalizations.of(context).address_ucf,
+            AppLocalizations.of(context).address2_ucf,
             onPressed: () {
               Navigator.push(
                 context,

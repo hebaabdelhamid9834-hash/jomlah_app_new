@@ -1,4 +1,5 @@
 import 'package:active_ecommerce_cms_demo_app/helpers/system_config.dart';
+import 'package:active_ecommerce_cms_demo_app/main.dart';
 import 'package:active_ecommerce_cms_demo_app/screens/product/product_details.dart';
 import 'package:flutter/material.dart';
 
@@ -92,18 +93,23 @@ class _TopSellingProductsCardState extends State<TopSellingProductsCard> {
                       crossAxisAlignment: WrapCrossAlignment.center,
                       alignment: WrapAlignment.spaceBetween,
                       children: [
-                        Text(
-                          SystemConfig.systemCurrency!.code != null
-                              ? widget.main_price!.replaceAll(
-                                  SystemConfig.systemCurrency!.code!,
-                                  SystemConfig.systemCurrency!.symbol!)
-                              : widget.main_price!,
-                          textAlign: TextAlign.left,
-                          maxLines: 1,
-                          style: TextStyle(
-                              color: Color(0xffE62E04),
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold),
+                        Row(
+                          children: [
+                            Text(keepNumbersOnly(
+                              SystemConfig.systemCurrency!.code != null
+                                  ? widget.main_price!.replaceAll(
+                                      SystemConfig.systemCurrency!.code!,
+                                      SystemConfig.systemCurrency!.symbol!)
+                                  : widget.main_price!),
+                              textAlign: TextAlign.left,
+                              maxLines: 1,
+                              style: TextStyle(
+                                  color: Color(0xffE62E04),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Image.asset("assets/ryial.jpg",width: 12,height: 12,)
+                          ],
                         ),
                         SizedBox(
                           width: 18,

@@ -246,7 +246,7 @@ class _FollowedSellersState extends State<FollowedSellers> {
                       color: MyTheme.amber,
                       borderRadius: BorderRadius.circular(6)),
                   child: Text(
-                    "Visit Store",
+                    LangText(context).local.visit_store_ucf,
                     style: TextStyle(
                         fontSize: 10,
                         color: Colors.amber.shade700,

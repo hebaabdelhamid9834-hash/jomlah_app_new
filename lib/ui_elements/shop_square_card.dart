@@ -1,3 +1,4 @@
+import 'package:active_ecommerce_cms_demo_app/custom/lang_text.dart';
 import 'package:active_ecommerce_cms_demo_app/my_theme.dart';
 import 'package:active_ecommerce_cms_demo_app/screens/seller_details.dart';
 import 'package:flutter/material.dart';
@@ -140,7 +141,7 @@ class _ShopSquareCardState extends State<ShopSquareCard> {
         borderRadius: BorderRadius.circular(6),
       ),
       child: Text(
-        "Visit Store",
+        LangText(context).local.visit_store_ucf,
         style: TextStyle(
           fontSize: 10,
           color: Colors.amber.shade700,

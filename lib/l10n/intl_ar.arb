@@ -131,8 +131,8 @@
   "yes_ucf": "نعم",
   "no_ucf": "لا",
   "date_ucf": "تاريخ",
-  "follow_ucf": "هو يتابع",
-  "followed_ucf": "هو يتابع",
+  "follow_ucf": "متابعة",
+  "followed_ucf": "تمت المتابعة",
   "unfollow_ucf": "إلغاء متابعة هذا البائع",
   "continue_ucf": "مكتمل",
   "day_ucf": "يوم",
@@ -142,6 +142,7 @@
   "get_direction_ucf": "احصل على اتجاه",
   "digital_product_screen_": "منتج رقمي",
   "digital_product_ucf": "المنتجات الرقمية",
+    "visit_store_ucf": "زيارة المتجر",
   "dashboard_ucf": "لوحة القيادة",
   "earnings_ucf": "الأرباح",
   "not_logged_in_ucf": "لم يتم دخولك",
@@ -713,7 +714,8 @@
 "smallest": "الأصغر",
 "largest": "الأكبر",
 "to_set_your_profile_picture": "لتعيين صورة ملفك الشخصي، يحتاج هذا التطبيق إلى الوصول إلى صورتك من المعرض.",
-"permission_denied_to_access_photos": "تم رفض الإذن للوصول إلى الصور"
+"permission_denied_to_access_photos": "تم رفض الإذن للوصول إلى الصور",
+"address2_ucf":"العنوان"
 
 
 }

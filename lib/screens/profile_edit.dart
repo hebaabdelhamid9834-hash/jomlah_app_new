@@ -485,7 +485,7 @@ class _ProfileEditState extends State<ProfileEdit> {
               alignment: Alignment.center,
               width: 129,
               height: 42,
-              decoration: BoxDecoration(color: const Color(0xffE62E04), borderRadius: BorderRadius.circular(8)),
+              decoration: BoxDecoration(color: MyTheme.accent_color, borderRadius: BorderRadius.circular(8)),
               child:  Text(
                 LangText(context).local.update_password_ucf,
                 textAlign: TextAlign.center,
@@ -601,7 +601,7 @@ class _ProfileEditState extends State<ProfileEdit> {
               alignment: Alignment.center,
               width: 129,
               height: 42,
-              decoration: BoxDecoration(color: const Color(0xffE62E04), borderRadius: BorderRadius.circular(8)),
+              decoration: BoxDecoration(color: MyTheme.accent_color, borderRadius: BorderRadius.circular(8)),
               child:  Text(
                 LangText(context).local.update_profile_ucf,
                 textAlign: TextAlign.center,

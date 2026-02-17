@@ -54,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "added_to_cart": MessageLookupByLibrary.simpleMessage(
       "تمت الإضافة إلى عربة التسوق",
     ),
+    "address2_ucf": MessageLookupByLibrary.simpleMessage("العنوان"),
     "address_ucf": MessageLookupByLibrary.simpleMessage("اسم الشارع"),
     "addresses_of_user": MessageLookupByLibrary.simpleMessage(
       "عناوين المستخدمين",
@@ -483,11 +484,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "flash_deal_ucf": MessageLookupByLibrary.simpleMessage("صفقة سريعة"),
     "flash_deals_ucf": MessageLookupByLibrary.simpleMessage("عروض فلاش"),
-    "follow_ucf": MessageLookupByLibrary.simpleMessage("هو يتابع"),
+    "follow_ucf": MessageLookupByLibrary.simpleMessage("متابعة"),
     "followed_sellers_ucf": MessageLookupByLibrary.simpleMessage(
       "الباعة المتبعون",
     ),
-    "followed_ucf": MessageLookupByLibrary.simpleMessage("هو يتابع"),
+    "followed_ucf": MessageLookupByLibrary.simpleMessage("تمت المتابعة"),
     "forget_password_ucf": MessageLookupByLibrary.simpleMessage(
       "نسيت كلمة السر؟",
     ),
@@ -1338,6 +1339,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "عرض الفئات الفرعية",
     ),
     "vimeo_ucf": MessageLookupByLibrary.simpleMessage("فام"),
+    "visit_store_ucf": MessageLookupByLibrary.simpleMessage("زيارة المتجر"),
     "wallet_balance_ucf": MessageLookupByLibrary.simpleMessage("رصيد المحفظة"),
     "wallet_recharge_history_ucf": MessageLookupByLibrary.simpleMessage(
       "سجل إعادة شحن المحفظة",

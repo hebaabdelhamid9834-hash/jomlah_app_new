@@ -145,14 +145,14 @@ class _ProductCardState extends State<ProductCard> {
                           padding: EdgeInsets.fromLTRB(16, 8, 16, 0),
                           child: Row(
                             children: [
-                              Text(keepNumbersOnly(" ${ getNumberFromPrice(
+                              Text(keepNumbersOnly(
                                 SystemConfig.systemCurrency != null
                                     ? widget.stroked_price?.replaceAll(
                                     SystemConfig.systemCurrency!.code!,
                                     SystemConfig.systemCurrency!.symbol!) ??
                                     ''
                                     : widget.stroked_price ?? '',
-                              )} ")
+                             )
                               ,
                                 textAlign: TextAlign.left,
                                 overflow: TextOverflow.ellipsis,
@@ -173,23 +173,29 @@ class _ProductCardState extends State<ProductCard> {
                         SizedBox(height: 8.0),
                       Padding(
                         padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
-                        child: Text(
-                          " ${ getNumberFromPrice(
-                            SystemConfig.systemCurrency != null
-                                ? widget.stroked_price?.replaceAll(
-                                SystemConfig.systemCurrency!.code!,
-                                SystemConfig.systemCurrency!.symbol!) ??
-                                ''
-                                : widget.stroked_price ?? '',
-                          )} ${AppLocalizations.of(context).ryial_ucf}",
-                          textAlign: TextAlign.left,
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                          style: TextStyle(
-                            color: Color(0xffE62E04),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                          ),
+                        child: Row(
+                          children: [
+                            Text(
+                              keepNumbersOnly(
+                                SystemConfig.systemCurrency != null
+                                    ? widget.stroked_price?.replaceAll(
+                                    SystemConfig.systemCurrency!.code!,
+                                    SystemConfig.systemCurrency!.symbol!) ??
+                                    ''
+                                    : widget.stroked_price ?? '',
+                             ),
+                              textAlign: TextAlign.left,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                              style: TextStyle(
+                                color: Color(0xffE62E04),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            Image.asset("assets/ryial.jpg",width: 12,height: 12,)
+
+                          ],
                         ),
                       ),
                     ],

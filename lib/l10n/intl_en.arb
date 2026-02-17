@@ -789,7 +789,8 @@
         "smallest":"Smallest",
         "largest":"Largest",
         "to_set_your_profile_picture":"To set your profile picture, this app needs to collect your image from the gallery.",
-"permission_denied_to_access_photos.":"Permission denied to access photos."
+"permission_denied_to_access_photos.":"Permission denied to access photos.",
+"address2_ucf":"Address"
 
 
 
