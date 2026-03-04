@@ -146,9 +146,11 @@ class _ChatState extends State<Chat> {
         body: Stack(
           children: [
             !_isInitial ? conversations() : chatShimmer(),
-            typeSmsSection(),
           ],
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton:             typeSmsSection(),
+
       ),
     );
   }
@@ -285,6 +287,7 @@ class _ChatState extends State<Chat> {
                     ],
                   ),
                 ),
+                SizedBox(width: 7,),
                 Container(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -615,7 +618,7 @@ class _ChatState extends State<Chat> {
     return Align(
       alignment: Alignment.bottomLeft,
       child: Container(
-        padding: const EdgeInsets.only(left: 20, bottom: 10, top: 10),
+        padding:  EdgeInsets.only(left: 20, bottom:10, top: 10),
         height: 60,
         width: double.infinity,
         color: Colors.white.withOpacity(0.95),

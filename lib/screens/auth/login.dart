@@ -42,13 +42,14 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   String _login_by = "phone"; //phone or email
-  String initialCountry = 'US';
+  String initialCountry = 'SA';
+  PhoneNumber phoneCode = PhoneNumber(isoCode: 'SA', dialCode: "+966");
 
   // PhoneNumber phoneCode = PhoneNumber(isoCode: 'US', dialCode: "+1");
-  var countries_code = <String?>[];
+  var countries_code =<String>[];
 
   String? _phone = "";
-  String? _country_code = "+20";
+  String? _country_code = "+966";
 
   //controllers
   final TextEditingController _phoneNumberController = TextEditingController();
@@ -650,6 +651,7 @@ class _LoginState extends State<Login> {
                             contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
                           ),
                           countries: countries_code,
+                          initialValue: phoneCode,
                           locale: "ar",
                           onInputChanged: (PhoneNumber number) {
                             debugPrint(number.phoneNumber);

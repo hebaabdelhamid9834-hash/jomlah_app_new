@@ -178,6 +178,7 @@ class _PasswordForgetState extends State<PasswordForget> {
                       SizedBox(
                         height: 36,
                         child: CustomInternationalPhoneNumberInput(
+                          locale: "ar",
                           searchBoxDecoration: InputDecoration(
                             hintText:AppLocalizations.of(
                               context,

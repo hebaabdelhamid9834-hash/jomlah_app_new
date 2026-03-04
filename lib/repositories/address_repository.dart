@@ -250,8 +250,8 @@ print("countries url ${url}");
 
     // ✅ Put Saudi Arabia first
     data.countries!.sort((a, b) {
-      if (a.name!.toLowerCase().contains('saudi')) return -1;
-      if (b.name!.toLowerCase().contains('saudi')) return 1;
+      if (a.name!.toLowerCase().contains('المملكة العربية السعودية')) return -1;
+      if (b.name!.toLowerCase().contains('المملكة العربية السعودية')) return 1;
       return a.name!.compareTo(b.name!);
     });
 print("data ${data.countries!.length}");

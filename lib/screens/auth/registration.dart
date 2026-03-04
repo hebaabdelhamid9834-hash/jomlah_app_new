@@ -40,6 +40,7 @@ class Registration extends StatefulWidget {
 class _RegistrationState extends State<Registration> {
   String _register_by = "phone"; //phone or email
   String initialCountry = 'US';
+  PhoneNumber phoneCode = PhoneNumber(isoCode: 'SA', dialCode: "+966");
 
   var countries_code = <String?>[];
   bool _obscurePassword = true;
@@ -328,6 +329,7 @@ class _RegistrationState extends State<Registration> {
                       SizedBox(
                         height: 36,
                         child: CustomInternationalPhoneNumberInput(
+                          initialValue: phoneCode,
                           locale: "ar",
                           searchBoxDecoration: InputDecoration(
                             hintText:AppLocalizations.of(
