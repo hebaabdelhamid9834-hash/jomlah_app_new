@@ -676,6 +676,7 @@
   "upload_file": "تحميل ملف",
   "value_must_be_greater_or_equal": "يجب أن تكون القيمة أكبر من أو تساوي الحد الأدنى لعرض التسعير",
   "permission_required_ucf": "مطلوب إذن",
+
   "agree_ucf": "موافق",
   "logout_warning_description": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
   "upload_file_permission_purpose": "لتحميل الملفات، يحتاج التطبيق إلى الوصول إلى مساحة تخزين جهازك.",
