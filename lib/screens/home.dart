@@ -190,7 +190,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
         Padding(
           padding: const EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
           child: Text(
-            "AppLocalizations.of(context).flash_deals_ucf",
+            AppLocalizations.of(context).flash_deals_ucf,
             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
           ),
         ),

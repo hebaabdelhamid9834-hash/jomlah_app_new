@@ -53,9 +53,9 @@ import 'package:one_context/one_context.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_value/shared_value.dart';
 String keepNumbersOnly(String input) {
-  return input.replaceAll(RegExp(r'[^0-9]'), '');
+  // This regex replaces everything EXCEPT 0-9 and the dot (.)
+  return input.replaceAll(RegExp(r'[^0-9.]'), '');
 }
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
