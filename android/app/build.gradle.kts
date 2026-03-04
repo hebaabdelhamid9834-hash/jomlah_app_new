@@ -27,7 +27,7 @@ android {
         applicationId = "com.jomlah.android"
         minSdk = flutter.minSdkVersion
         targetSdk = 36
-        versionCode = 22
+        versionCode = 23
         versionName = flutter.versionName
         multiDexEnabled = true
     }
