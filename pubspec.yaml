@@ -1,7 +1,7 @@
 name: active_ecommerce_cms_demo_app
 description: "A new Flutter project."
 publish_to: "none"
-version: 3.5.7+369
+version: 3.5.5+25
 
 environment:
   sdk: ">=3.4.0 <4.0.0"
